@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jochebed Food Court - Inspiring Greatness Through Nigerian Cuisine</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-hand-holding-heart me-2"></i>Jochebed Food Court
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="#order" class="btn btn-custom ms-lg-3 mt-2 mt-lg-0">Order Now</a>
+            </div>
+        </div>
+    </nav>
+        <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="container hero-content text-center text-white">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mb-4">
+                        <i class="fas fa-hand-holding-heart fa-4x mb-3" style="color: var(--sunshine-yellow);"></i>
+                    </div>
+                    <h1 class="display-3 mb-4 fw-bold">Inspiring Greatness Through Nigerian Cuisine</h1>
+                    <p class="lead mb-5 fs-4">Experience authentic flavors at Ojude, Lagos State. Where every meal is a journey of empowerment, community, and culinary excellence.</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="#menu" class="btn btn-custom btn-lg">Explore Menu</a>
+                        <a href="#location" class="btn btn-outline-custom btn-lg">Find Us</a>
+                    </div>
+                    <div class="mt-5 pt-4">
+                        <div class="row text-center">
+                            <div class="col-4">
+                                <h3 class="fw-bold">100%</h3>
+                                <small>Authentic</small>
+                            </div>
+                            <div class="col-4 border-start border-end border-white border-opacity-25">
+                                <h3 class="fw-bold">50+</h3>
+                                <small>Dishes</small>
+                            </div>
+                            <div class="col-4">
+                                <h3 class="fw-bold">5★</h3>
+                                <small>Rated</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 reveal">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=700&fit=crop" alt="Nigerian Food" class="img-fluid about-img">
+                        <div class="position-absolute bottom-0 start-0 m-3 bg-white p-3 rounded-3 shadow">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fas fa-award text-warning fa-2x"></i>
+                                <div>
+                                    <small class="text-muted d-block">Established</small>
+                                    <strong>2024</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5 reveal">
+                    <span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Our Story</span>
+                    <h2 class="display-5 fw-bold mb-4 mt-2">Nurturing Communities Through Food</h2>
+                    <p class="lead text-muted mb-4">Jochebed Food Court embodies the spirit of empowerment and growth. Located in the heart of Ojude, Lagos, we serve authentic Nigerian meals that bring families and communities together.</p>
+                    
+                    <div class="row g-4 mt-2">
+                        <div class="col-md-4 text-center">
+                            <div class="icon-box coral mx-auto">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h5 class="fw-bold">Care</h5>
+                            <small class="text-muted">Made with love</small>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="icon-box purple mx-auto">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h5 class="fw-bold">Innovation</h5>
+                            <small class="text-muted">Modern twists</small>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="icon-box green mx-auto">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="fw-bold">Community</h5>
+                            <small class="text-muted">For everyone</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                  </section>
+      <!-- Menu Section -->
+    <section id="menu" class="menu-section py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="text-uppercase fw-bold" style="color: var(--amethyst-purple); letter-spacing: 2px;">Our Offerings</span>
+                <h2 class="display-5 fw-bold mt-2">Authentic Nigerian Delicacies</h2>
+                <p class="lead text-muted">From traditional soups to modern grills</p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Menu Item 1 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Egusi Soup" class="card-img-top menu-img">
+                            <span class="price-tag">₦3,500</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-soup">SOUP</span>
+                            <h4 class="card-title fw-bold">Egusi Soup</h4>
+                            <p class="card-text text-muted">Rich melon seed soup with assorted meat, fish, and pounded yam.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Egusi Soup')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 2 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop" alt="Jollof Rice" class="card-img-top menu-img">
+                            <span class="price-tag">₦2,800</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-rice">RICE</span>
+                            <h4 class="card-title fw-bold">Party Jollof</h4>
+                            <p class="card-text text-muted">Smoky party-style jollof rice with grilled chicken and plantain.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Party Jollof')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 3 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=400&h=300&fit=crop" alt="Pounded Yam" class="card-img-top menu-img">
+                            <span class="price-tag">₦4,000</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-swallow">SWALLOW</span>
+                            <h4 class="card-title fw-bold">Pounded Yam</h4>
+                            <p class="card-text text-muted">Smooth pounded yam served with rich vegetable soup.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Pounded Yam')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 4 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" alt="Suya" class="card-img-top menu-img">
+                            <span class="price-tag">₦1,500</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-grill">GRILL</span>
+                            <h4 class="card-title fw-bold">Beef Suya</h4>
+                            <p class="card-text text-muted">Spicy grilled beef skewers with traditional yaji spice blend.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Beef Suya')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                                  </div>
+                        <!-- Menu Item 5 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=400&h=300&fit=crop" alt="Amala" class="card-img-top menu-img">
+                            <span class="price-tag">₦3,200</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-swallow">SWALLOW</span>
+                            <h4 class="card-title fw-bold">Amala & Gbegiri</h4>
+                            <p class="card-text text-muted">Traditional yam flour with bean soup and ewedu.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Amala & Gbegiri')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 6 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&h=300&fit=crop" alt="Seafood" class="card-img-top menu-img">
+                            <span class="price-tag">₦5,500</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-soup">SEAFOOD</span>
+                            <h4 class="card-title fw-bold">Seafood Okra</h4>
+                            <p class="card-text text-muted">Fresh okra soup with prawns, crabs, and fish.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Seafood Okra')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 7 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603088549196-5924751d6c7a?w=400&h=300&fit=crop" alt="Moi Moi" class="card-img-top menu-img">
+                            <span class="price-tag">₦800</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-rice">SIDES</span>
+                            <h4 class="card-title fw-bold">Moi Moi</h4>
+                            <p class="card-text text-muted">Steamed bean pudding with eggs and fish flakes.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Moi Moi')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Item 8 -->
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="card menu-card h-100">
+                        <div class="position-relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&h=300&fit=crop" alt="Grilled Fish" class="card-img-top menu-img">
+                            <span class="price-tag">₦4,500</span>
+                        </div>
+                        <div class="card-body p-4">
+                            <span class="category-badge badge-grill">GRILL</span>
+                            <h4 class="card-title fw-bold">Grilled Croaker</h4>
+                            <p class="card-text text-muted">Whole grilled fish with spicy pepper sauce and yam chips.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Grilled Croaker')">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5 reveal">
+                <a href="#" class="btn btn-outline-dark btn-lg rounded-pill px-5">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location-section py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0 reveal">
+                    <div class="location-card">
+                        <span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Find Us</span>
+                        <h2 class="display-5 fw-bold mb-4 mt-2">Visit Jochebed Food Court</h2>
+                        
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="icon-box coral me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Address</h5>
+                                <p class="text-muted mb-0">Ojude Market Road,<br>Lagos State, Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="icon-box purple me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Opening Hours</h5>
+                                <p class="text-muted mb-0">Mon - Sat: 7:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 8:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="icon-box green me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-1">Contact</h5>
+                                <p class="text-muted mb-0">+234 801 234 5678<br>hello@jochebedfoodcourt.com</p>
+                            </div>
+                        </div>
+
+                        <a href="https://maps.google.com" target="_blank" class="btn btn-custom w-100 mt-3">
+                            <i class="fas fa-directions me-2"></i>Get Directions
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <div class="map-container position-relative">
+                        <div class="map-placeholder">
+                            <div class="pulse-marker"></div>
+                            <i class="fas fa-map-marked-alt fa-4x mb-3" style="color: var(--coral-orange);"></i>
+                            <h4 class="fw-bold">Ojude, Lagos State</h4>
+                            <p class="text-muted">Interactive Map Loading...</p>
+                            <small class="d-block mt-2">Google Maps Integration Ready</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                              </section>
+          <!-- Testimonials -->
+    <section class="testimonial-section py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="text-uppercase fw-bold" style="color: var(--sunshine-yellow); letter-spacing: 2px;">Testimonials</span>
+                <h2 class="display-5 fw-bold mt-2 text-white">What Our Community Says</h2>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card h-100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="mb-4">"The egusi soup here reminds me of my grandmother's cooking. Jochebed Food Court has become our family's favorite weekend spot!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user" style="color: var(--coral-orange);"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Adeola M.</h6>
+                                <small class="text-white-50">Regular Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card h-100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="mb-4">"Finally, a restaurant in Ojude that serves authentic Nigerian food with modern presentation. The suya is absolutely legendary!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user" style="color: var(--amethyst-purple);"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Chidi O.</h6>
+                                <small class="text-white-50">Food Blogger</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 reveal">
+                    <div class="testimonial-card h-100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="mb-4">"I love how they empower young people in the community. The food is amazing, but their mission is what keeps me coming back."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="fas fa-user" style="color: var(--pear-green);"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Fatima K.</h6>
+                                <small class="text-white-50">Community Leader</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center mb-5 reveal">
+                    <span class="text-uppercase fw-bold" style="color: var(--sky-blue); letter-spacing: 2px;">Connect</span>
+                    <h2 class="display-5 fw-bold mt-2">Make a Reservation</h2>
+                    <p class="lead text-muted">Book your table or place a catering order</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal">
+                    <form id="reservationForm" class="bg-white p-5 rounded-4 shadow-lg">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">First Name</label>
+                                <input type="text" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Last Name</label>
+                                <input type="text" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email</label>
+                                <input type="email" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Phone</label>
+                                <input type="tel" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Date</label>
+                                <input type="date" class="form-control form-control-custom" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Number of Guests</label>
+                                <select class="form-select form-control-custom">
+                                    <option>1-2 People</option>
+                                    <option>3-4 People</option>
+                                    <option>5-8 People</option>
+                                    <option>9+ People</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label fw-bold">Special Requests</label>
+                                <textarea class="form-control form-control-custom" rows="4" placeholder="Any dietary requirements or special occasions..."></textarea>
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-custom btn-lg px-5">
+                                    <i class="fas fa-calendar-check me-2"></i>Book Now
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="fw-bold mb-3" style="color: var(--coral-orange);">
+                        <i class="fas fa-hand-holding-heart me-2"></i>Jochebed Food Court
+                    </h3>
+                    <p class="text-white-50 mb-4">Inspiring greatness through authentic Nigerian cuisine. Located in Ojude, Lagos State, we serve our community with care, innovation, and culinary excellence.</p>
+                    <div class="d-flex">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About Us</a>
+                    <a href="#menu" class="footer-link">Our Menu</a>
+                    <a href="#location" class="footer-link">Location</a>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="fw-bold mb-3">Services</h5>
+                    <a href="#" class="footer-link">Dine-in</a>
+                    <a href="#" class="footer-link">Takeaway</a>
+                    <a href="#" class="footer-link">Catering</a>
+                    <a href="#" class="footer-link">Events</a>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="fw-bold mb-3">Newsletter</h5>
+                    <p class="text-white-50 mb-3">Subscribe for special offers and updates</p>
+                    <form id="newsletterForm" class="d-flex gap-2">
+                        <input type="email" class="form-control form-control-custom" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-custom">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4 border-white border-opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white-50">&copy; 2024 Jochebed Food Court. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-white-50">Made with <i class="fas fa-heart text-danger"></i> in Ojude, Lagos</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 rounded-4 overflow-hidden">
+                <div class="modal-header border-0" style="background: linear-gradient(135deg, var(--coral-orange), var(--amethyst-purple));">
+                    <h5 class="modal-title text-white fw-bold">
+                        <i class="fas fa-shopping-cart me-2"></i>Added to Cart
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4 text-center">
+                    <div class="mb-3">
+                        <i class="fas fa-check-circle fa-3x" style="color: var(--pear-green);"></i>
+                    </div>
+                    <h5 class="fw-bold" id="cartItemName">Item Added!</h5>
+                    <p class="text-muted">Would you like to continue shopping or proceed to checkout?</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-custom rounded-pill">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+  </html>
+                          
