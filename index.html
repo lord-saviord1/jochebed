@@ -1,15 +1,16 @@
+         
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jochebed Food Court - Inspiring Greatness Through Nigerian Cuisine</title>
+    <title>Jochebed's Touch - Nigerian Food Court at Ojodu Berger, Lagos</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -23,7 +24,7 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-hand-holding-heart me-2"></i>Jochebed Food Court
+                Jochebed's Touch
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -36,20 +37,25 @@
                     <li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <button class="cart-icon-btn ms-lg-2" type="button" id="cartOpenBtn" aria-label="View order">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count-badge d-none-zero" id="cartCountBadge">0</span>
+                </button>
                 <a href="#order" class="btn btn-custom ms-lg-3 mt-2 mt-lg-0">Order Now</a>
             </div>
         </div>
     </nav>
         <!-- Hero Section -->
     <section id="home" class="hero d-flex align-items-center">
-        <div class="container hero-content text-center text-white">
+        <div class="hero-leaf leaf-1"></div>
+        <div class="hero-leaf leaf-2"></div>
+        <div class="hero-leaf leaf-3"></div>
+        <div class="container hero-content text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="mb-4">
-                        <i class="fas fa-hand-holding-heart fa-4x mb-3" style="color: var(--sunshine-yellow);"></i>
-                    </div>
-                    <h1 class="display-3 mb-4 fw-bold">Inspiring Greatness Through Nigerian Cuisine</h1>
-                    <p class="lead mb-5 fs-4">Experience authentic flavors at Ojude, Lagos State. Where every meal is a journey of empowerment, community, and culinary excellence.</p>
+                    <span class="hero-eyebrow">Jochebed's Touch</span>
+                    <h1 class="display-3 mb-4 fw-bold">Taste the Moment at Jochebed's Food Court</h1>
+                    <p class="lead mb-5 fs-4">Real Nigerian dishes, a lounge to watch the match, and a kitchen that cooks for the neighborhood. Find us at Ojodu Berger.</p>
                     <div class="d-flex gap-3 justify-content-center flex-wrap">
                         <a href="#menu" class="btn btn-custom btn-lg">Explore Menu</a>
                         <a href="#location" class="btn btn-outline-custom btn-lg">Find Us</a>
@@ -60,7 +66,7 @@
                                 <h3 class="fw-bold">100%</h3>
                                 <small>Authentic</small>
                             </div>
-                            <div class="col-4 border-start border-end border-white border-opacity-25">
+                            <div class="col-4 border-start border-end" style="border-color: rgba(96,14,78,0.2) !important;">
                                 <h3 class="fw-bold">50+</h3>
                                 <small>Dishes</small>
                             </div>
@@ -81,10 +87,10 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0 reveal">
                     <div class="position-relative">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=700&fit=crop" alt="Nigerian Food" class="img-fluid about-img">
+                        <img src="images/space-lounge.jpg" alt="Jochebed's Touch lounge seating" class="img-fluid about-img">
                         <div class="position-absolute bottom-0 start-0 m-3 bg-white p-3 rounded-3 shadow">
                             <div class="d-flex align-items-center gap-2">
-                                <i class="fas fa-award text-warning fa-2x"></i>
+                                <i class="fas fa-award fa-2x" style="color: var(--coral-orange);"></i>
                                 <div>
                                     <small class="text-muted d-block">Established</small>
                                     <strong>2024</strong>
@@ -96,7 +102,7 @@
                 <div class="col-lg-6 ps-lg-5 reveal">
                     <span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Our Story</span>
                     <h2 class="display-5 fw-bold mb-4 mt-2">Nurturing Communities Through Food</h2>
-                    <p class="lead text-muted mb-4">Jochebed Food Court embodies the spirit of empowerment and growth. Located in the heart of Ojude, Lagos, we serve authentic Nigerian meals that bring families and communities together.</p>
+                    <p class="lead text-muted mb-4">Jochebed's Touch embodies the spirit of empowerment and growth. Located at Ojodu Berger, Lagos, we serve authentic Nigerian meals that bring families and communities together.</p>
                     
                     <div class="row g-4 mt-2">
                         <div class="col-md-4 text-center">
@@ -125,13 +131,111 @@
             </div>
         </div>
                   </section>
+
+    <!-- From Our Kitchen Showcase -->
+    <section id="kitchen" class="kitchen-section py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">From Our Kitchen</span>
+                <h2 class="display-5 fw-bold mt-2">A Closer Look at What We Cook</h2>
+                <p class="lead text-muted">A few plates straight from the kitchen at Ojodu Berger</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="images/dish-jollof-chicken.jpg" alt="Jollof rice and chicken">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Jollof Rice & Chicken</h5>
+                            <p class="text-muted mb-0">Our smoky party-style jollof, served with well-seasoned fried chicken.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="images/dish-noodles-egg.jpg" alt="Noodles topped with fried egg">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Noodles & Egg</h5>
+                            <p class="text-muted mb-0">A quick, comforting plate of seasoned noodles topped with a fried egg.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="images/dish-eba-ogbono.jpg" alt="Eba with ogbono soup">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Eba & Ogbono</h5>
+                            <p class="text-muted mb-0">Smooth cassava swallow with a rich, draw ogbono soup, just like home.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="images/dish-nkwobi.jpg" alt="Nkwobi garnished with onions and herbs">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Nkwobi</h5>
+                            <p class="text-muted mb-0">Spiced cow foot in a palm oil sauce, garnished with onion and utazi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mt-2">
+                <div class="col-md-4 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="Egusi soup">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Egusi Soup</h5>
+                            <p class="text-muted mb-0">Rich melon seed soup with assorted meat and fish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" alt="Beef suya">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Beef Suya</h5>
+                            <p class="text-muted mb-0">Spicy grilled beef skewers in traditional yaji spice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="kitchen-card">
+                        <div class="kitchen-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1603088549196-5924751d6c7a?w=400&h=300&fit=crop" alt="Moi moi">
+                        </div>
+                        <div class="kitchen-body">
+                            <h5 class="fw-bold">Moi Moi</h5>
+                            <p class="text-muted mb-0">Steamed bean pudding with eggs and fish flakes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kitchen-cta reveal">
+                <a href="#" class="btn btn-outline-dark btn-lg rounded-pill px-5">View Full Menu</a>
+            </div>
+        </div>
+    </section>
       <!-- Menu Section -->
     <section id="menu" class="menu-section py-5">
         <div class="container py-5">
             <div class="text-center mb-5 reveal">
                 <span class="text-uppercase fw-bold" style="color: var(--amethyst-purple); letter-spacing: 2px;">Our Offerings</span>
-                <h2 class="display-5 fw-bold mt-2">Authentic Nigerian Delicacies</h2>
-                <p class="lead text-muted">From traditional soups to modern grills</p>
+                <h2 class="display-5 fw-bold mt-2">Order From Jochebed's Touch</h2>
+                <p class="lead text-muted">Add what you want, then send your order straight to us on WhatsApp</p>
             </div>
 
             <div class="row g-4">
@@ -154,7 +258,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Egusi Soup')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Egusi Soup', 3500)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -179,7 +283,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Party Jollof')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Party Jollof', 2800)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -204,7 +308,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Pounded Yam')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Pounded Yam', 4000)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -229,7 +333,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Beef Suya')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Beef Suya', 1500)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -253,7 +357,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Amala & Gbegiri')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Amala & Gbegiri', 3200)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -278,7 +382,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Seafood Okra')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Seafood Okra', 5500)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -303,7 +407,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Moi Moi')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Moi Moi', 800)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -328,7 +432,7 @@
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                 </div>
-                                <button class="btn btn-sm btn-custom" onclick="addToCart('Grilled Croaker')">Add to Cart</button>
+                                <button class="btn btn-sm btn-custom" onclick="addToCart('Grilled Croaker', 4500)">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -341,6 +445,31 @@
         </div>
     </section>
 
+    <!-- Our Space -->
+    <section id="space" class="space-section py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 reveal">
+                <span class="text-uppercase fw-bold" style="color: var(--amethyst-purple); letter-spacing: 2px;">Our Space</span>
+                <h2 class="display-5 fw-bold mt-2">More Than a Meal</h2>
+                <p class="lead text-muted">An outdoor lounge for good food, good company, and match nights</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 reveal">
+                    <div class="space-photo">
+                        <img src="images/space-lounge.jpg" alt="Jochebed's Touch outdoor lounge seating">
+                        <div class="space-caption">The Lounge</div>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal">
+                    <div class="space-photo">
+                        <img src="images/space-matchnight.jpg" alt="Guests watching a football match at Jochebed's Touch">
+                        <div class="space-caption">Match Night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Location Section -->
     <section id="location" class="location-section py-5">
         <div class="container py-5">
@@ -348,7 +477,7 @@
                 <div class="col-lg-5 mb-4 mb-lg-0 reveal">
                     <div class="location-card">
                         <span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Find Us</span>
-                        <h2 class="display-5 fw-bold mb-4 mt-2">Visit Jochebed Food Court</h2>
+                        <h2 class="display-5 fw-bold mb-4 mt-2">Visit Jochebed's Touch</h2>
                         
                         <div class="d-flex align-items-start mb-4">
                             <div class="icon-box coral me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
@@ -356,7 +485,7 @@
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-1">Address</h5>
-                                <p class="text-muted mb-0">Ojude Market Road,<br>Lagos State, Nigeria</p>
+                                <p class="text-muted mb-0">43 Obafalabi Street,<br>Beside Anuoluwa Plaza,<br>Ojodu Berger, Lagos</p>
                             </div>
                         </div>
 
@@ -376,24 +505,22 @@
                             </div>
                             <div>
                                 <h5 class="fw-bold mb-1">Contact</h5>
-                                <p class="text-muted mb-0">+234 801 234 5678<br>hello@jochebedfoodcourt.com</p>
+                                <p class="text-muted mb-0">+234 707 731 0948<br>For reservation &amp; enquiries</p>
                             </div>
                         </div>
 
-                        <a href="https://maps.google.com" target="_blank" class="btn btn-custom w-100 mt-3">
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=43+Obafalabi+Street,+Ojodu+Berger,+Lagos" target="_blank" class="btn btn-custom w-100 mt-3">
                             <i class="fas fa-directions me-2"></i>Get Directions
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-7 reveal">
                     <div class="map-container position-relative">
-                        <div class="map-placeholder">
-                            <div class="pulse-marker"></div>
-                            <i class="fas fa-map-marked-alt fa-4x mb-3" style="color: var(--coral-orange);"></i>
-                            <h4 class="fw-bold">Ojude, Lagos State</h4>
-                            <p class="text-muted">Interactive Map Loading...</p>
-                            <small class="d-block mt-2">Google Maps Integration Ready</small>
-                        </div>
+                        <iframe
+                            src="https://www.google.com/maps?q=43+Obafalabi+Street,+Ojodu+Berger,+Lagos&output=embed"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Jochebed's Touch location map">
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -466,7 +593,7 @@
                 <div class="col-lg-8 text-center mb-5 reveal">
                     <span class="text-uppercase fw-bold" style="color: var(--sky-blue); letter-spacing: 2px;">Connect</span>
                     <h2 class="display-5 fw-bold mt-2">Make a Reservation</h2>
-                    <p class="lead text-muted">Book your table or place a catering order</p>
+                    <p class="lead text-muted">Book your table or place a catering order with Jochebed's Touch</p>
                 </div>
             </div>
 
@@ -525,15 +652,9 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h3 class="fw-bold mb-3" style="color: var(--coral-orange);">
-                        <i class="fas fa-hand-holding-heart me-2"></i>Jochebed Food Court
+                        Jochebed's Touch
                     </h3>
-                    <p class="text-white-50 mb-4">Inspiring greatness through authentic Nigerian cuisine. Located in Ojude, Lagos State, we serve our community with care, innovation, and culinary excellence.</p>
-                    <div class="d-flex">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-                    </div>
+                    <p class="text-white-50 mb-4">Inspiring greatness through authentic Nigerian cuisine. Located at Ojodu Berger, Lagos, we serve our community with care, innovation, and culinary excellence.</p>
                 </div>
                 <div class="col-lg-2 col-md-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
@@ -563,22 +684,22 @@
             <hr class="my-4 border-white border-opacity-25">
             <div class="row align-items-center">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 text-white-50">&copy; 2024 Jochebed Food Court. All rights reserved.</p>
+                    <p class="mb-0 text-white-50">&copy; 2024 Jochebed's Touch Ltd. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0 text-white-50">Made with <i class="fas fa-heart text-danger"></i> in Ojude, Lagos</p>
+                    <p class="mb-0 text-white-50">Made with <i class="fas fa-heart text-danger"></i> in Ojodu Berger, Lagos</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Cart Modal -->
+    <!-- Item Added Toast/Modal -->
     <div class="modal fade" id="cartModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content border-0 rounded-4 overflow-hidden">
                 <div class="modal-header border-0" style="background: linear-gradient(135deg, var(--coral-orange), var(--amethyst-purple));">
                     <h5 class="modal-title text-white fw-bold">
-                        <i class="fas fa-shopping-cart me-2"></i>Added to Cart
+                        <i class="fas fa-shopping-bag me-2"></i>Added to Order
                     </h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
@@ -587,11 +708,57 @@
                         <i class="fas fa-check-circle fa-3x" style="color: var(--pear-green);"></i>
                     </div>
                     <h5 class="fw-bold" id="cartItemName">Item Added!</h5>
-                    <p class="text-muted">Would you like to continue shopping or proceed to checkout?</p>
+                    <p class="text-muted">Keep adding, or open your order to send it to us.</p>
                 </div>
                 <div class="modal-footer border-0 justify-content-center pb-4">
                     <button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Continue Shopping</button>
-                    <button type="button" class="btn btn-custom rounded-pill">Checkout</button>
+                    <button type="button" class="btn btn-custom rounded-pill" data-bs-dismiss="modal" id="goToOrderBtn">View Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart / Order Offcanvas Panel -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">Your Order</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body cart-panel-body">
+            <div id="cartItemsContainer">
+                <div class="cart-empty-msg" id="cartEmptyMsg">
+                    <i class="fas fa-shopping-bag fa-2x mb-3 d-block"></i>
+                    Your order is empty.<br>Add something from the menu.
+                </div>
+            </div>
+
+            <div id="cartTotalsWrap" class="d-none">
+                <div class="cart-total-row">
+                    <span>Total</span>
+                    <span id="cartTotalAmount">₦0</span>
+                </div>
+
+                <div class="order-form-section" id="orderFormSection">
+                    <h6 class="fw-bold mb-3">Your details</h6>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Name</label>
+                        <input type="text" class="form-control form-control-custom" id="orderName" placeholder="Your name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Pickup or Delivery?</label>
+                        <select class="form-select form-control-custom" id="orderFulfillment">
+                            <option value="Pickup">Pickup</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
+                        <div class="delivery-note">Delivery is available case-by-case. We'll confirm with you on WhatsApp.</div>
+                    </div>
+                    <div class="mb-3 delivery-address-field d-none" id="deliveryAddressField">
+                        <label class="form-label fw-bold">Delivery Address</label>
+                        <textarea class="form-control form-control-custom" id="orderAddress" rows="2" placeholder="Where should we deliver to?"></textarea>
+                    </div>
+                    <button class="btn-whatsapp-order" id="sendWhatsappBtn" type="button">
+                        <i class="fab fa-whatsapp me-2"></i>Send Order via WhatsApp
+                    </button>
                 </div>
             </div>
         </div>
@@ -604,4 +771,3 @@
     <script src="script.js"></script>
 </body>
   </html>
-                          
