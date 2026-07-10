@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Menu - Jochebed's Touch Food Court</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top">
+<div class="container">
+<a class="navbar-brand" href="index.html">
+Jochebed's Touch
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+<li class="nav-item"><a class="nav-link active" href="menu.html">Menu</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#location">Location</a></li>
+<li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+</ul>
+<button class="cart-icon-btn ms-lg-2" type="button" id="cartOpenBtn" aria-label="View order">
+<i class="fas fa-shopping-bag"></i>
+<span class="cart-count-badge d-none-zero" id="cartCountBadge">0</span>
+</button>
+<a href="https://wa.me/2347077310948?text=Hi%20Jochebed's%20Touch%2C%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn btn-custom ms-lg-3 mt-2 mt-lg-0">Order Now</a>
+</div>
+</div>
+</nav>
+
+<!-- Menu Hero -->
+<section class="menu-page-hero">
+<div class="container text-center">
+<span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Our Full Menu</span>
+<h1 class="display-4 fw-bold mt-2 mb-3">Everything We Serve</h1>
+<p class="lead text-muted mb-0">Browse every dish at Jochebed's Touch Food Court, Ojodu Berger</p>
+<div class="price-disclaimer mt-4">
+<i class="fas fa-info-circle me-2"></i>
+Prices shown are from our most recent printed menu and may have changed. Please confirm current pricing with us on WhatsApp before ordering.
+</div>
+</div>
+</section>
+
+<section class="menu-page-section">
+<div class="container">
+
+<!-- Swallows -->
+<div class="text-center">
+<h2 class="menu-category-title">Swallows</h2>
+</div>
+<p class="text-muted text-center mb-4">Choose any swallow below, paired with your choice of soup</p>
+<div class="row g-4 mb-3">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=200&h=200&fit=crop" alt="Eba" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Eba</h5>
+<p>Smooth cassava swallow</p>
+<span class="menu-list-price">₦1,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Eba', 1000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1719936617511-8caa9dd6db00?w=200&h=200&fit=crop" alt="Amala" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Amala</h5>
+<p>Traditional yam flour swallow</p>
+<span class="menu-list-price">₦1,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Amala', 1000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1604908177453-7462950a6a3b?w=200&h=200&fit=crop" alt="Semo" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Semo</h5>
+<p>Smooth semolina swallow</p>
+<span class="menu-list-price">₦1,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Semo', 1000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1604908176997-3c3c37cd8bb8?w=200&h=200&fit=crop" alt="Wheat" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Wheat</h5>
+<p>Wheat meal swallow</p>
+<span class="menu-list-price">₦1,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Wheat', 1000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1604908176997-3c3c37cd8bb8?w=200&h=200&fit=crop" alt="Sogba" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Sogba</h5>
+<p>Classic swallow base</p>
+<span class="menu-list-price">₦1,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Sogba', 1000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1613563734808-6a5fdd6f2b19?w=200&h=200&fit=crop" alt="Pounded Yam" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Pounded Yam</h5>
+<p>Smooth pounded white yam</p>
+<span class="menu-list-price">₦1,200</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Pounded Yam', 1200)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<p class="text-muted text-center mb-4 mt-5">Traditional Soups & Stews</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1763048443535-1243379234e2?w=200&h=200&fit=crop" alt="Egusi Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Egusi Soup</h5>
+<p>Rich melon seed soup</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Egusi Soup', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1645066804237-08145dd196e9?w=200&h=200&fit=crop" alt="Ogbono" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Ogbono</h5>
+<p>Draw soup with ground ogbono seeds</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Ogbono', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?w=200&h=200&fit=crop" alt="Edikang Ikong" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Edikang Ikong</h5>
+<p>Vegetable soup with assorted meat</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Edikang Ikong', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1708782344137-21c48d98dfcc?w=200&h=200&fit=crop" alt="Oha Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Oha Soup</h5>
+<p>Traditional Igbo soup with oha leaves</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Oha Soup', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1673465580365-b96bef916770?w=200&h=200&fit=crop" alt="Efo Riro" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Efo Riro</h5>
+<p>Spinach stew with peppers</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Efo Riro', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1618133878999-dea0c5256160?w=200&h=200&fit=crop" alt="Ewedu" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Ewedu</h5>
+<p>Jute leaves soup</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Ewedu', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1708782344071-35ed44b849a9?w=200&h=200&fit=crop" alt="Omi Obe" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Omi Obe</h5>
+<p>Rich Yoruba-style stew</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Omi Obe', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1707274860789-12ba022ff3c1?w=200&h=200&fit=crop" alt="Plain Stew" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Plain Stew</h5>
+<p>Classic tomato pepper stew</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Plain Stew', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Breakfast -->
+<div class="text-center">
+<h2 class="menu-category-title">Breakfast</h2>
+</div>
+<p class="text-muted text-center mb-4">A fusion of classic and home-style delights</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=200&h=200&fit=crop" alt="French Toast and Scrambled Eggs" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">French Toast & Scrambled Eggs</h5>
+<p>Served with coffee or tea</p>
+<span class="menu-list-price">₦5,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('French Toast & Scrambled Eggs', 5000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1664993090321-b2caff794431?w=200&h=200&fit=crop" alt="Akara Balls and Pap" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Akara Balls & Pap</h5>
+<p>Crispy bean cakes with warm pap</p>
+<span class="menu-list-price">₦4,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Akara Balls & Pap', 4500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Starters & Appetizers -->
+<div class="text-center">
+<h2 class="menu-category-title">Starters & Appetizers</h2>
+</div>
+<p class="text-muted text-center mb-4">Small bites to awaken your palate</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1664334997177-6ae654a62735?w=200&h=200&fit=crop" alt="Nkwobi" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Nkwobi</h5>
+<p>Spiced cow foot in palm oil sauce</p>
+<span class="menu-list-price">₦6,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Nkwobi', 6000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=200&h=200&fit=crop" alt="Isi Ewu" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Isi Ewu</h5>
+<p>Goat head in spicy sauce</p>
+<span class="menu-list-price">₦8,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Isi Ewu', 8000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Rice Creation -->
+<div class="text-center">
+<h2 class="menu-category-title">Rice Creation</h2>
+</div>
+<p class="text-muted text-center mb-4">Classic and signature rice dishes</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1634324092526-91f5e878b72f?w=200&h=200&fit=crop" alt="Jollof Rice" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Jollof Rice</h5>
+<p>Our signature smoky party jollof</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Jollof Rice', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1603496987674-79600a000f55?w=200&h=200&fit=crop" alt="White Rice" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">White Rice</h5>
+<p>Plain steamed white rice</p>
+<span class="menu-list-price">₦1,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('White Rice', 1500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=200&h=200&fit=crop" alt="Fried Rice" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Fried Rice</h5>
+<p>Vegetable fried rice</p>
+<span class="menu-list-price">₦3,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Fried Rice', 3500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1635360065676-f47200966893?w=200&h=200&fit=crop" alt="Caribbean Rice" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Caribbean Rice</h5>
+<p>Basmati, prawns, chicken breast, veggies</p>
+<span class="menu-list-price">₦7,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Caribbean Rice', 7000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Side & Light Fare -->
+<div class="text-center">
+<h2 class="menu-category-title">Side & Light Fare</h2>
+</div>
+<p class="text-muted text-center mb-4">Pairings & additions</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=200&h=200&fit=crop" alt="French Fries" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">French Fries</h5>
+<p>Crispy golden fries</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('French Fries', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1618106646223-a4c8f21b5d2e?w=200&h=200&fit=crop" alt="Yam Fries" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Yam Fries</h5>
+<p>Fried yam sticks</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Yam Fries', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Pasta Dishes -->
+<div class="text-center">
+<h2 class="menu-category-title">Pasta Dishes</h2>
+</div>
+<p class="text-muted text-center mb-4">Silky sauces & al dente perfection</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?w=200&h=200&fit=crop" alt="Jollof Pasta" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Jollof Pasta</h5>
+<p>Pasta in rich jollof sauce</p>
+<span class="menu-list-price">₦3,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Jollof Pasta', 3000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=200&h=200&fit=crop" alt="Special Noodles" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Special Noodles</h5>
+<p>Rice sticks, prawns, chicken, veggies</p>
+<span class="menu-list-price">₦4,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Special Noodles', 4500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Hearty Pepper Soups -->
+<div class="text-center">
+<h2 class="menu-category-title">Hearty Pepper Soups</h2>
+</div>
+<p class="text-muted text-center mb-4">Served hot with bold aromatic spices</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1708782344137-21c48d98dfcc?w=200&h=200&fit=crop" alt="Spicy Catfish Pepper Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Spicy Catfish Pepper Soup</h5>
+<p>Bold, peppery, and hearty</p>
+<span class="menu-list-price">₦12,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Spicy Catfish Pepper Soup', 12000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1673465580365-b96bef916770?w=200&h=200&fit=crop" alt="Chicken Pepper Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Chicken Pepper Soup</h5>
+<p>Light, spicy, and comforting</p>
+<span class="menu-list-price">₦6,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Chicken Pepper Soup', 6000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1645066804237-08145dd196e9?w=200&h=200&fit=crop" alt="Goat Meat Pepper Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Goat Meat Pepper Soup</h5>
+<p>Rich and warming</p>
+<span class="menu-list-price">₦7,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Goat Meat Pepper Soup', 7000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1708782344071-35ed44b849a9?w=200&h=200&fit=crop" alt="Assorted Meat Pepper Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Assorted Meat Pepper Soup</h5>
+<p>A mix of meats in peppery broth</p>
+<span class="menu-list-price">₦5,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Assorted Meat Pepper Soup', 5000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200&h=200&fit=crop" alt="Croaker Fish Pepper Soup" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Croaker Fish Pepper Soup</h5>
+<p>Fresh fish in a spicy broth</p>
+<span class="menu-list-price">₦6,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Croaker Fish Pepper Soup', 6000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Grills -->
+<div class="text-center">
+<h2 class="menu-category-title">Grills</h2>
+</div>
+<p class="text-muted text-center mb-4">Flame-kissed & deeply flavored</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=200&h=200&fit=crop" alt="Shawarma" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Shawarma</h5>
+<p>Grilled wrap with fresh veggies</p>
+<span class="menu-list-price">₦2,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Shawarma', 2500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Protein Add-ons -->
+<div class="text-center">
+<h2 class="menu-category-title">Protein Add-ons</h2>
+</div>
+<p class="text-muted text-center mb-4">Peppered, grilled & seasoned</p>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1610057098265-05f2bcbedd55?w=200&h=200&fit=crop" alt="Chicken" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Chicken</h5>
+<p>Peppered, grilled & seasoned</p>
+<span class="menu-list-price">₦7,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Chicken (Protein)', 7000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1634324092526-91f5e878b72f?w=200&h=200&fit=crop" alt="Beef" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Beef</h5>
+<p>Peppered, grilled & seasoned</p>
+<span class="menu-list-price">₦5,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Beef (Protein)', 5000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1645066804237-08145dd196e9?w=200&h=200&fit=crop" alt="Goat Meat" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Goat Meat</h5>
+<p>Peppered, grilled & seasoned</p>
+<span class="menu-list-price">₦6,500</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Goat Meat (Protein)', 6500)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=200&h=200&fit=crop" alt="Croaker Fish" class="menu-list-img">
+<div class="menu-list-info">
+<h5 class="fw-bold">Croaker Fish</h5>
+<p>Peppered, grilled & seasoned</p>
+<span class="menu-list-price">₦6,000</span>
+</div>
+<button class="btn-add-cart" onclick="addToCart('Croaker Fish (Protein)', 6000)"><i class="fas fa-plus"></i></button>
+</div>
+</div>
+</div>
+
+<!-- Drinks -->
+<div class="text-center">
+<h2 class="menu-category-title">Drinks</h2>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<div class="menu-list-info">
+<h5 class="fw-bold">Beer</h5>
+<p>All kinds available — ask our staff</p>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<div class="menu-list-info">
+<h5 class="fw-bold">Bitters</h5>
+<p>Action Bitters, Origin Bitters, Long Jack Bitters</p>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="menu-list-card">
+<div class="menu-list-info">
+<h5 class="fw-bold">Soft Drinks</h5>
+<p>Water, Pepsi, Fanta, Fayrouz, Sprite, Malta Guinness, Maltina, Chivita</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="row g-4">
+<div class="col-lg-4">
+<h3 class="fw-bold mb-3" style="color: var(--coral-orange);">
+Jochebed's Touch
+</h3>
+<p class="text-white-50 mb-4">Inspiring greatness through authentic Nigerian cuisine. Located at Ojodu Berger, Lagos, we serve our community with care, innovation, and culinary excellence.</p>
+</div>
+<div class="col-lg-2 col-md-4">
+<h5 class="fw-bold mb-3">Quick Links</h5>
+<a href="index.html#home" class="footer-link">Home</a>
+<a href="index.html#about" class="footer-link">About Us</a>
+<a href="menu.html" class="footer-link">Our Menu</a>
+<a href="index.html#location" class="footer-link">Location</a>
+</div>
+<div class="col-lg-2 col-md-4">
+<h5 class="fw-bold mb-3">Services</h5>
+<a href="#" class="footer-link">Dine-in</a>
+<a href="#" class="footer-link">Takeaway</a>
+<a href="#" class="footer-link">Catering</a>
+<a href="#" class="footer-link">Events</a>
+</div>
+<div class="col-lg-4 col-md-4">
+<h5 class="fw-bold mb-3">Contact</h5>
+<p class="text-white-50 mb-1">+234 707 731 0948</p>
+<p class="text-white-50">43 Obafalabi Street, Ojodu Berger, Lagos</p>
+</div>
+</div>
+<hr class="my-4 border-white border-opacity-25">
+<div class="row align-items-center">
+<div class="col-md-6 text-center text-md-start">
+<p class="mb-0 text-white-50">&copy; 2024 Jochebed's Touch Ltd. All rights reserved.</p>
+</div>
+<div class="col-md-6 text-center text-md-end">
+<p class="mb-0 text-white-50">Made with <i class="fas fa-heart text-danger"></i> in Ojodu Berger, Lagos</p>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Item Added Toast/Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content border-0 rounded-4 overflow-hidden">
+<div class="modal-header border-0" style="background: linear-gradient(135deg, var(--coral-orange), var(--amethyst-purple));">
+<h5 class="modal-title text-white fw-bold">
+<i class="fas fa-shopping-bag me-2"></i>Added to Order
+</h5>
+<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body p-4 text-center">
+<div class="mb-3">
+<i class="fas fa-check-circle fa-3x" style="color: var(--pear-green);"></i>
+</div>
+<h5 class="fw-bold" id="cartItemName">Item Added!</h5>
+<p class="text-muted">Keep adding, or open your order to send it to us.</p>
+</div>
+<div class="modal-footer border-0 justify-content-center pb-4">
+<button type="button" class="btn btn-outline-secondary rounded-pill" data-bs-dismiss="modal">Continue Shopping</button>
+<button type="button" class="btn btn-custom rounded-pill" data-bs-dismiss="modal" id="goToOrderBtn">View Order</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Cart / Order Offcanvas Panel -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas">
+<div class="offcanvas-header border-bottom">
+<h5 class="offcanvas-title fw-bold">Your Order</h5>
+<button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+</div>
+<div class="offcanvas-body cart-panel-body">
+<div id="cartItemsContainer">
+<div class="cart-empty-msg" id="cartEmptyMsg">
+<i class="fas fa-shopping-bag fa-2x mb-3 d-block"></i>
+Your order is empty.<br>Add something from the menu.
+</div>
+</div>
+<div id="cartTotalsWrap" class="d-none">
+<div class="cart-total-row">
+<span>Total</span>
+<span id="cartTotalAmount">₦0</span>
+</div>
+<div class="order-form-section" id="orderFormSection">
+<h6 class="fw-bold mb-3">Your details</h6>
+<div class="mb-3">
+<label class="form-label fw-bold">Name</label>
+<input type="text" class="form-control form-control-custom" id="orderName" placeholder="Your name" required>
+</div>
+<div class="mb-3">
+<label class="form-label fw-bold">Pickup or Delivery?</label>
+<select class="form-select form-control-custom" id="orderFulfillment">
+<option value="Pickup">Pickup</option>
+<option value="Delivery">Delivery</option>
+</select>
+<div class="delivery-note">Delivery is available case-by-case. We'll confirm with you on WhatsApp.</div>
+</div>
+<div class="mb-3 delivery-address-field d-none" id="deliveryAddressField">
+<label class="form-label fw-bold">Delivery Address</label>
+<textarea class="form-control form-control-custom" id="orderAddress" rows="2" placeholder="Where should we deliver to?"></textarea>
+</div>
+<button class="btn-whatsapp-order" id="sendWhatsappBtn" type="button">
+<i class="fab fa-whatsapp me-2"></i>Send Order via WhatsApp
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
