@@ -1,470 +1,175 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jochebed's Touch - Nigerian Food Court at Ojodu Berger, Lagos</title>
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Custom CSS -->
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Jochebed's Touch — Nigerian Food Court at Ojodu Berger, Lagos</title>
+<meta name="description" content="Real Nigerian dishes, a lounge to watch the match, and a kitchen that cooks for the neighborhood. Find Jochebed's Touch at 43 Obafalabi Street, Ojodu Berger, Lagos.">
+<meta name="theme-color" content="#2a0623">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jochebed's Touch — Nigerian Food Court at Ojodu Berger, Lagos">
+<meta property="og:description" content="Real Nigerian dishes, a lounge to watch the match, and a kitchen that cooks for the neighborhood. Find Jochebed's Touch at 43 Obafalabi Street, Ojodu Berger, Lagos.">
+<meta property="og:locale" content="en_NG">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 8h24a24 24 0 0 1 24 24v24H32A24 24 0 0 1 8 32z' fill='%238DC63F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Inter:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.className='js'</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Jochebed's Touch","servesCuisine":"Nigerian","telephone":"+2347077310948","address":{"@type":"PostalAddress","streetAddress":"43 Obafalabi Street, Beside Anuoluwa Plaza","addressLocality":"Ojodu Berger","addressRegion":"Lagos","addressCountry":"NG"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"07:00","closes":"22:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"12:00","closes":"20:00"}]}</script>
 </head>
-<body>
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg fixed-top">
-<div class="container">
-<a class="navbar-brand" href="#">
-Jochebed's Touch
-</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-<li class="nav-item"><a class="nav-link" href="#kitchen">Menu</a></li>
-<li class="nav-item"><a class="nav-link" href="#location">Location</a></li>
-<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-</ul>
-<button class="cart-icon-btn ms-lg-2" type="button" id="cartOpenBtn" aria-label="View order">
-<i class="fas fa-shopping-bag"></i>
-<span class="cart-count-badge d-none-zero" id="cartCountBadge">0</span>
-</button>
-<a href="https://wa.me/2347077310948?text=Hi%20Jochebed's%20Touch%2C%20I'd%20like%20to%20place%20an%20order" target="_blank" class="btn btn-custom ms-lg-3 mt-2 mt-lg-0">Order Now</a>
-</div>
-</div>
+<body data-page="story">
+<div class="curtain" aria-hidden="true"><div class="curtain__leaf"></div><div class="curtain__name">Jochebed's Touch</div></div>
+<canvas id="scene" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div>
+<a class="sr" href="#main">Skip to content</a>
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Jochebed's Touch, home"><span class="leaf-glyph"></span>Jochebed's Touch</a>
+  <ul class="nav__links">
+    <li><a href="index.html" aria-current="page">Our Story</a></li>
+    <li><a href="kitchen.html">Kitchen &amp; Space</a></li>
+    <li><a href="index.html#find">Find Us</a></li>
+  </ul>
+  <div class="nav__cta">
+    <a class="btn btn--sm" data-magnetic target="_blank" rel="noopener" href="https://wa.me/2347077310948?text=Hi%20Jochebed%27s%20Touch%2C%20I%27d%20like%20to%20place%20an%20order">Order Now</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="menu" aria-label="Mobile menu">
+  <a href="index.html">Our Story</a><a href="kitchen.html">Kitchen &amp; Space</a><a href="index.html#find">Find Us</a>
+  <a href="https://wa.me/2347077310948?text=Hi%20Jochebed%27s%20Touch%2C%20I%27d%20like%20to%20place%20an%20order" target="_blank" rel="noopener" class="hl">Order Now &rarr;</a>
 </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero d-flex align-items-center">
-<div class="hero-leaf leaf-1"></div>
-<div class="hero-leaf leaf-2"></div>
-<div class="hero-leaf leaf-3"></div>
-<div class="container hero-content text-center">
-<div class="row justify-content-center">
-<div class="col-lg-8">
-<span class="hero-eyebrow">Jochebed's Touch</span>
-<h1 class="display-3 mb-4 fw-bold">Taste the Moment at Jochebed's Food Court</h1>
-<p class="lead mb-5 fs-4">Real Nigerian dishes, a lounge to watch the match, and a kitchen that cooks for the neighborhood. Find us at Ojodu Berger.</p>
-<div class="d-flex gap-3 justify-content-center flex-wrap">
-<a href="#menu" class="btn btn-custom btn-lg">Explore Menu</a>
-<a href="#location" class="btn btn-outline-custom btn-lg">Find Us</a>
-</div>
-<div class="mt-5 pt-4">
-<div class="row text-center">
-<div class="col-4">
-<h3 class="fw-bold">100%</h3>
-<small>Authentic</small>
-</div>
-<div class="col-4 border-start border-end" style="border-color: rgba(96,14,78,0.2) !important;">
-<h3 class="fw-bold">50+</h3>
-<small>Dishes</small>
-</div>
-<div class="col-4">
-<h3 class="fw-bold">5★</h3>
-<small>Rated</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<main id="main">
+
+<section class="hero" id="home" data-palette="0">
+  <div class="hero__inner">
+    <p class="eyebrow"><span class="leaf-glyph"></span>Ojodu Berger, Lagos</p>
+    <h1 data-split="hero">Taste the <span class="hl">Moment</span> at Jochebed's Food Court</h1>
+    <p class="lead" data-reveal style="--d:.5s">Real Nigerian dishes, a lounge to watch the match, and a kitchen that cooks for the neighborhood. Find us at Ojodu Berger.</p>
+    <div class="hero__cta" data-reveal style="--d:.65s">
+      <a class="btn" data-magnetic target="_blank" rel="noopener" href="https://wa.me/2347077310948?text=Hi%20Jochebed%27s%20Touch%2C%20I%27d%20like%20to%20place%20an%20order">Order on WhatsApp</a>
+      <a class="btn btn--ghost" data-magnetic href="#find">Find Us</a>
+    </div>
+    <div class="stats" data-reveal style="--d:.8s">
+      <div><strong>2024</strong><span>Established</span></div>
+      <div><strong>7AM&ndash;10PM</strong><span>Mon &ndash; Sat</span></div>
+      <div><strong>Ojodu Berger</strong><span>Lagos</span></div>
+    </div>
+  </div>
+  <div class="cue" aria-hidden="true"><i></i>Scroll</div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="about-section py-5">
-<div class="container py-5">
-<div class="row align-items-center">
-<div class="col-lg-6 mb-4 mb-lg-0 reveal">
-<div class="position-relative">
-<img src="images/space-lounge.jpg" alt="Jochebed's Touch lounge seating" class="img-fluid about-img">
-<div class="position-absolute bottom-0 start-0 m-3 bg-white p-3 rounded-3 shadow">
-<div class="d-flex align-items-center gap-2">
-<i class="fas fa-award fa-2x" style="color: var(--coral-orange);"></i>
-<div>
-<small class="text-muted d-block">Established</small>
-<strong>2024</strong>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="col-lg-6 ps-lg-5 reveal">
-<span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Our Story</span>
-<h2 class="display-5 fw-bold mb-4 mt-2">Nurturing Communities Through Food</h2>
-<p class="lead text-muted mb-4">Jochebed's Touch embodies the spirit of empowerment and growth. Located at Ojodu Berger, Lagos, we serve authentic Nigerian meals that bring families and communities together.</p>
-<div class="row g-4 mt-2">
-<div class="col-md-4 text-center">
-<div class="icon-box coral mx-auto">
-<i class="fas fa-heart"></i>
-</div>
-<h5 class="fw-bold">Care</h5>
-<small class="text-muted">Made with love</small>
-</div>
-<div class="col-md-4 text-center">
-<div class="icon-box purple mx-auto">
-<i class="fas fa-lightbulb"></i>
-</div>
-<h5 class="fw-bold">Innovation</h5>
-<small class="text-muted">Modern twists</small>
-</div>
-<div class="col-md-4 text-center">
-<div class="icon-box green mx-auto">
-<i class="fas fa-users"></i>
-</div>
-<h5 class="fw-bold">Community</h5>
-<small class="text-muted">For everyone</small>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section class="pin story" id="story" data-palette="1" data-pin="plant" style="--len:430vh" aria-label="Our story">
+  <div class="pin__stick">
+    <div class="story__grid">
+      <div class="story__text">
+        <p class="eyebrow"><span class="leaf-glyph"></span>Our Story</p>
+        <h2 data-split>Nurturing Communities Through Food</h2>
+        <div class="captions" aria-live="off">
+          <p class="cap">It starts with a pair of <b>caring hands.</b></p>
+          <p class="cap">Rooted in Ojodu Berger, <b>fed by the neighborhood.</b></p>
+          <p class="cap">Grown with <b>modern twists</b> on the dishes you grew up on.</p>
+          <p class="cap">And it blooms into a <b>table with room for everyone.</b></p>
+        </div>
+        <p class="story__about">Jochebed's Touch embodies the spirit of empowerment and growth. Located at Ojodu Berger, Lagos, we serve authentic Nigerian meals that bring families and communities together.</p>
+        <ul class="values">
+          <li><strong>Care</strong><span>Made with love</span></li>
+          <li><strong>Innovation</strong><span>Modern twists</span></li>
+          <li><strong>Community</strong><span>For everyone</span></li>
+        </ul>
+      </div>
+      <div class="story__art"><svg id="plant" viewBox="0 0 520 680" role="img" aria-label="Two hands cupped around a sprout that grows into a flower">
+<defs>
+<linearGradient id="gLeaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3f7a14"/><stop offset="1" stop-color="#9ccf4a"/></linearGradient>
+<linearGradient id="gPA" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#E37F65"/><stop offset="1" stop-color="#ffb9a3"/></linearGradient>
+<linearGradient id="gPB" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#F9E453"/><stop offset="1" stop-color="#fff6b0"/></linearGradient>
+<linearGradient id="gHand" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffdcc2"/><stop offset="1" stop-color="#e7966f"/></linearGradient>
+<radialGradient id="gGlow"><stop offset="0" stop-color="#F9E453" stop-opacity=".5"/><stop offset="1" stop-color="#F9E453" stop-opacity="0"/></radialGradient>
+<path id="leafShape" d="M0 0C34 -36 92 -36 126 0C92 36 34 36 0 0Z"/>
+<path id="petalShape" d="M0 0C-30 -28 -26 -84 0 -108C26 -84 30 -28 0 0Z"/>
+<g id="handShape"><g transform="translate(260 690) scale(.8) translate(-260 -690)">
+  <g fill="none" stroke-linecap="round">
+    <g stroke="#c9774f" stroke-width="27"><path d="M140 598C184 584 214 560 224 528"/><path d="M146 626C196 614 232 594 248 562"/><path d="M148 652C200 646 244 628 262 598"/><path d="M142 676C190 680 236 668 262 638"/></g>
+    <g stroke="#f4bc98" stroke-width="21"><path d="M140 598C184 584 214 560 224 528"/><path d="M146 626C196 614 232 594 248 562"/><path d="M148 652C200 646 244 628 262 598"/><path d="M142 676C190 680 236 668 262 638"/></g>
+  </g>
+  <path d="M-40 720C-44 610 24 556 112 568C152 574 168 624 160 668C150 716 70 740 -40 720Z" fill="#c9774f"/>
+  <path d="M-40 716C-42 616 26 566 110 578C146 584 158 628 152 666C142 708 66 730 -40 716Z" fill="#f4bc98"/>
+  <path d="M96 574C124 552 160 556 178 580C150 566 122 566 96 574Z" fill="#f4bc98" stroke="#c9774f" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M-40 718C-40 650 -10 618 36 610C10 650 -4 690 -40 718Z" fill="#E37F65"/>
+</g></g>
+</defs>
+<circle id="glow" cx="260" cy="190" r="200" fill="url(#gGlow)" opacity="0"/>
+<g id="sparkles" fill="#F9E453"></g>
+<path id="stem" d="M260 556C250 478 278 408 258 338S262 220 260 172" fill="none" stroke="#7DB33A" stroke-width="9" stroke-linecap="round"/>
+<g id="leaves">
+  <g class="leaf" data-f=".2" data-a="-158" data-s="1.05"><use href="#leafShape" fill="url(#gLeaf)"/><path d="M8 0C50 -2 92 -2 120 0" stroke="#2f6410" stroke-opacity=".5" stroke-width="2" fill="none"/></g>
+  <g class="leaf" data-f=".4" data-a="-24" data-s=".98"><use href="#leafShape" fill="url(#gLeaf)"/><path d="M8 0C50 -2 92 -2 120 0" stroke="#2f6410" stroke-opacity=".5" stroke-width="2" fill="none"/></g>
+  <g class="leaf" data-f=".6" data-a="-152" data-s=".85"><use href="#leafShape" fill="url(#gLeaf)"/><path d="M8 0C50 -2 92 -2 120 0" stroke="#2f6410" stroke-opacity=".5" stroke-width="2" fill="none"/></g>
+  <g class="leaf" data-f=".78" data-a="-30" data-s=".78"><use href="#leafShape" fill="url(#gLeaf)"/><path d="M8 0C50 -2 92 -2 120 0" stroke="#2f6410" stroke-opacity=".5" stroke-width="2" fill="none"/></g>
+</g>
+<ellipse id="bud" cx="260" cy="170" rx="13" ry="20" fill="#7DB33A"/>
+<g id="bloom" transform="translate(260 170)">
+  <g id="petalsO"></g><g id="petalsI"></g>
+  <circle id="core" r="17" fill="#F9E453"/><circle id="core2" r="7" fill="#600E4E"/>
+</g>
+<g id="handL" class="hand"><g transform="translate(6 0)"><use href="#handShape"/></g></g>
+<g id="handR" class="hand"><g transform="translate(514 0) scale(-1 1)"><use href="#handShape"/></g></g>
+</svg></div>
+    </div>
+  </div>
 </section>
 
-<!-- From Our Kitchen Showcase -->
-<section id="kitchen" class="kitchen-section py-5">
-<div class="container py-5">
-<div class="text-center mb-5 reveal">
-<span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">From Our Kitchen</span>
-<h2 class="display-5 fw-bold mt-2">A Closer Look at What We Cook</h2>
-<p class="lead text-muted">A few plates straight from the kitchen at Ojodu Berger</p>
-</div>
-<div class="row g-4">
-<div class="col-md-6 col-lg-3 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="images/dish-jollof-chicken.jpg" alt="Jollof rice and chicken">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Jollof Rice & Chicken</h5>
-<p class="text-muted mb-0">Our smoky party-style jollof, served with well-seasoned fried chicken.</p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="images/dish-noodles-egg.jpg" alt="Noodles topped with fried egg">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Noodles & Egg</h5>
-<p class="text-muted mb-0">A quick, comforting plate of seasoned noodles topped with a fried egg.</p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="images/dish-eba-ogbono.jpg" alt="Eba with ogbono soup">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Eba & Ogbono</h5>
-<p class="text-muted mb-0">Smooth cassava swallow with a rich, draw ogbono soup, just like home.</p>
-</div>
-</div>
-</div>
-<div class="col-md-6 col-lg-3 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="images/dish-nkwobi.jpg" alt="Nkwobi garnished with onions and herbs">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Nkwobi</h5>
-<p class="text-muted mb-0">Spiced cow foot in a palm oil sauce, garnished with onion and utazi.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="row g-4 mt-2">
-<div class="col-md-4 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="https://images.unsplash.com/photo-1763048443535-1243379234e2?w=400&h=300&fit=crop" alt="Egusi soup">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Egusi Soup</h5>
-<p class="text-muted mb-0">Rich melon seed soup with assorted meat and fish.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&h=300&fit=crop" alt="Beef suya">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Beef Suya</h5>
-<p class="text-muted mb-0">Spicy grilled beef skewers in traditional yaji spice.</p>
-</div>
-</div>
-</div>
-<div class="col-md-4 reveal">
-<div class="kitchen-card">
-<div class="kitchen-img-wrap">
-<img src="https://images.unsplash.com/photo-1603088549196-5924751d6c7a?w=400&h=300&fit=crop" alt="Moi moi">
-</div>
-<div class="kitchen-body">
-<h5 class="fw-bold">Moi Moi</h5>
-<p class="text-muted mb-0">Steamed bean pudding with eggs and fish flakes.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="kitchen-cta reveal">
-<a href="menu.html" class="btn btn-outline-dark btn-lg rounded-pill px-5">View Full Menu</a>
-</div>
-</div>
+<section class="pin hs" id="kitchen" data-palette="2" data-pin="hscroll" style="--len:300vh" aria-label="From our kitchen">
+  <div class="pin__stick">
+    <div class="hs__head"><p class="eyebrow"><span class="leaf-glyph"></span>From Our Kitchen</p>
+      <h2 data-split>A Closer Look at What We Cook</h2>
+      <p>A few plates straight from the kitchen at Ojodu Berger</p></div>
+    <div class="hs__track">
+      <article class="hcard"><div class="leaf-frame ph" style="--c1:#E37F65;--c2:#600E4E"><img src="images/dish-jollof-chicken.jpg" alt="Jollof rice and chicken" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>Jollof Rice &amp; Chicken</h3><p>Our smoky party-style jollof, served with well-seasoned fried chicken.</p></article>
+      <article class="hcard"><div class="leaf-frame ph" style="--c1:#F9E453;--c2:#E37F65"><img src="images/dish-noodles-egg.jpg" alt="Noodles topped with fried egg" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>Noodles &amp; Egg</h3><p>A quick, comforting plate of seasoned noodles topped with a fried egg.</p></article>
+      <article class="hcard"><div class="leaf-frame ph" style="--c1:#588B22;--c2:#2a0623"><img src="images/dish-eba-ogbono.jpg" alt="Eba with ogbono soup" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>Eba &amp; Ogbono</h3><p>Smooth cassava swallow with a rich, draw ogbono soup, just like home.</p></article>
+      <article class="hcard"><div class="leaf-frame ph" style="--c1:#44ABEA;--c2:#600E4E"><img src="images/dish-nkwobi.jpg" alt="Nkwobi garnished with onions and herbs" loading="lazy" decoding="async" onerror="this.remove()"></div><h3>Nkwobi</h3><p>Spiced cow foot in a palm oil sauce, garnished with onion and utazi.</p></article>
+      <article class="hcard hcard--cta"><p class="eyebrow">There's more</p><h3>See the whole kitchen &amp; the space</h3><a class="btn" data-magnetic href="kitchen.html">Kitchen &amp; Space &rarr;</a></article>
+    </div>
+  </div>
 </section>
 
-<!-- Our Space -->
-<section id="space" class="space-section py-5">
-<div class="container py-5">
-<div class="text-center mb-5 reveal">
-<span class="text-uppercase fw-bold" style="color: var(--amethyst-purple); letter-spacing: 2px;">Our Space</span>
-<h2 class="display-5 fw-bold mt-2">More Than a Meal</h2>
-<p class="lead text-muted">An outdoor lounge for good food, good company, and match nights</p>
-</div>
-<div class="row g-4">
-<div class="col-md-6 reveal">
-<div class="space-photo">
-<img src="images/space-lounge.jpg" alt="Jochebed's Touch outdoor lounge seating">
-<div class="space-caption">The Lounge</div>
-</div>
-</div>
-<div class="col-md-6 reveal">
-<div class="space-photo">
-<img src="images/space-matchnight.jpg" alt="Guests watching a football match at Jochebed's Touch">
-<div class="space-caption">Match Night</div>
-</div>
-</div>
-</div>
-</div>
+<section class="pin find" id="find" data-palette="3" data-pin="map" style="--len:240vh" aria-label="Find us">
+  <div class="pin__stick find__stick">
+    <p class="eyebrow"><span class="leaf-glyph"></span>Find Us</p>
+    <h2 data-split>Visit Jochebed's Touch</h2>
+    <p class="find__lede">Every story ends at the table. Yours starts at 43 Obafalabi Street.</p>
+    <div class="mapframe" id="mapframe">
+      <a class="mapframe__fallback" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=43+Obafalabi+Street,+Ojodu+Berger,+Lagos">43 Obafalabi Street, Ojodu Berger<small>Open in Google Maps</small></a><iframe title="Map showing Jochebed's Touch at 43 Obafalabi Street, Ojodu Berger, Lagos" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=43+Obafalabi+Street,+Ojodu+Berger,+Lagos&amp;output=embed"></iframe><span class="ripple"></span>
+      <div class="mapframe__veil"><span>Click to explore the map</span></div>
+    </div>
+  </div>
 </section>
 
-<!-- Location Section -->
-<section id="location" class="location-section py-5">
-<div class="container py-5">
-<div class="row align-items-center">
-<div class="col-lg-5 mb-4 mb-lg-0 reveal">
-<div class="location-card">
-<span class="text-uppercase fw-bold" style="color: var(--coral-orange); letter-spacing: 2px;">Find Us</span>
-<h2 class="display-5 fw-bold mb-4 mt-2">Visit Jochebed's Touch</h2>
-<div class="d-flex align-items-start mb-4">
-<div class="icon-box coral me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-<i class="fas fa-map-marker-alt"></i>
-</div>
-<div>
-<h5 class="fw-bold mb-1">Address</h5>
-<p class="text-muted mb-0">43 Obafalabi Street,<br>Beside Anuoluwa Plaza,<br>Ojodu Berger, Lagos</p>
-</div>
-</div>
-<div class="d-flex align-items-start mb-4">
-<div class="icon-box purple me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-<i class="fas fa-clock"></i>
-</div>
-<div>
-<h5 class="fw-bold mb-1">Opening Hours</h5>
-<p class="text-muted mb-0">Mon - Sat: 7:00 AM - 10:00 PM<br>Sunday: 12:00 PM - 8:00 PM</p>
-</div>
-</div>
-<div class="d-flex align-items-start mb-4">
-<div class="icon-box green me-3" style="width: 50px; height: 50px; font-size: 1.2rem;">
-<i class="fas fa-phone"></i>
-</div>
-<div>
-<h5 class="fw-bold mb-1">Contact</h5>
-<p class="text-muted mb-0">+234 707 731 0948<br>For reservation &amp; enquiries</p>
-</div>
-</div>
-<a href="https://www.google.com/maps/dir/?api=1&destination=43+Obafalabi+Street,+Ojodu+Berger,+Lagos" target="_blank" class="btn btn-custom w-100 mt-3">
-<i class="fas fa-directions me-2"></i>Get Directions
-</a>
-</div>
-</div>
-<div class="col-lg-7 reveal">
-<div class="map-container position-relative">
-<iframe
-src="https://www.google.com/maps?q=43+Obafalabi+Street,+Ojodu+Berger,+Lagos&output=embed"
-width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-referrerpolicy="no-referrer-when-downgrade" title="Jochebed's Touch location map">
-</iframe>
-</div>
-</div>
-</div>
-</div>
+<section class="visit">
+  <div class="visit__grid">
+    <div class="card" data-reveal><h4>Address</h4><p>43 Obafalabi Street,<br>Beside Anuoluwa Plaza,<br>Ojodu Berger, Lagos</p></div>
+    <div class="card" data-reveal style="--d:.1s"><h4>Opening Hours</h4><p>Mon &ndash; Sat: 7:00 AM &ndash; 10:00 PM<br>Sunday: 12:00 PM &ndash; 8:00 PM</p></div>
+    <div class="card" data-reveal style="--d:.2s"><h4>Contact</h4><p><a href="tel:+2347077310948">+234 707 731 0948</a></p><small>For reservation &amp; enquiries</small></div>
+  </div>
+  <div class="visit__cta" data-reveal>
+    <a class="btn" data-magnetic target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&amp;destination=43+Obafalabi+Street,+Ojodu+Berger,+Lagos">Get Directions</a>
+    <a class="btn btn--ghost" data-magnetic target="_blank" rel="noopener" href="https://wa.me/2347077310948?text=Hi%20Jochebed%27s%20Touch%2C%20I%27d%20like%20to%20place%20an%20order">Order on WhatsApp</a>
+  </div>
 </section>
-
-<!-- Testimonials -->
-<section class="testimonial-section py-5">
-<div class="container py-5">
-<div class="text-center mb-5 reveal">
-<span class="text-uppercase fw-bold" style="color: var(--sunshine-yellow); letter-spacing: 2px;">Testimonials</span>
-<h2 class="display-5 fw-bold mt-2 text-white">What Our Community Says</h2>
-</div>
-<div class="row g-4">
-<div class="col-md-4 reveal">
-<div class="testimonial-card h-100">
-<i class="fas fa-quote-left quote-icon"></i>
-<p class="mb-4">"The egusi soup here reminds me of my grandmother's cooking. Jochebed Food Court has become our family's favorite weekend spot!"</p>
-<div class="d-flex align-items-center">
-<div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-<i class="fas fa-user" style="color: var(--coral-orange);"></i>
-</div>
-<div>
-<h6 class="mb-0 fw-bold">Adeola M.</h6>
-<small class="text-white-50">Regular Customer</small>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-4 reveal">
-<div class="testimonial-card h-100">
-<i class="fas fa-quote-left quote-icon"></i>
-<p class="mb-4">"Finally, a restaurant in Ojude that serves authentic Nigerian food with modern presentation. The suya is absolutely legendary!"</p>
-<div class="d-flex align-items-center">
-<div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-<i class="fas fa-user" style="color: var(--amethyst-purple);"></i>
-</div>
-<div>
-<h6 class="mb-0 fw-bold">Chidi O.</h6>
-<small class="text-white-50">Food Blogger</small>
-</div>
-</div>
-</div>
-</div>
-<div class="col-md-4 reveal">
-<div class="testimonial-card h-100">
-<i class="fas fa-quote-left quote-icon"></i>
-<p class="mb-4">"I love how they empower young people in the community. The food is amazing, but their mission is what keeps me coming back."</p>
-<div class="d-flex align-items-center">
-<div class="bg-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-<i class="fas fa-user" style="color: var(--pear-green);"></i>
-</div>
-<div>
-<h6 class="mb-0 fw-bold">Fatima K.</h6>
-<small class="text-white-50">Community Leader</small>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact-section py-5">
-<div class="container py-5">
-<div class="row justify-content-center">
-<div class="col-lg-8 text-center mb-5 reveal">
-<span class="text-uppercase fw-bold" style="color: var(--sky-blue); letter-spacing: 2px;">Connect</span>
-<h2 class="display-5 fw-bold mt-2">Make a Reservation</h2>
-<p class="lead text-muted">Book your table or place a catering order with Jochebed's Touch</p>
-</div>
-</div>
-<div class="row justify-content-center">
-<div class="col-lg-8 reveal">
-<form id="reservationForm" class="bg-white p-5 rounded-4 shadow-lg">
-<div class="row g-3">
-<div class="col-md-6">
-<label class="form-label fw-bold">First Name</label>
-<input type="text" class="form-control form-control-custom" required>
-</div>
-<div class="col-md-6">
-<label class="form-label fw-bold">Last Name</label>
-<input type="text" class="form-control form-control-custom" required>
-</div>
-<div class="col-md-6">
-<label class="form-label fw-bold">Email</label>
-<input type="email" class="form-control form-control-custom" required>
-</div>
-<div class="col-md-6">
-<label class="form-label fw-bold">Phone</label>
-<input type="tel" class="form-control form-control-custom" required>
-</div>
-<div class="col-md-6">
-<label class="form-label fw-bold">Date</label>
-<input type="date" class="form-control form-control-custom" required>
-</div>
-<div class="col-md-6">
-<label class="form-label fw-bold">Number of Guests</label>
-<select class="form-select form-control-custom">
-<option>1-2 People</option>
-<option>3-4 People</option>
-<option>5-8 People</option>
-<option>9+ People</option>
-</select>
-</div>
-<div class="col-12">
-<label class="form-label fw-bold">Special Requests</label>
-<textarea class="form-control form-control-custom" rows="4" placeholder="Any dietary requirements or special occasions..."></textarea>
-</div>
-<div class="col-12 text-center mt-4">
-<button type="submit" class="btn btn-custom btn-lg px-5">
-<i class="fas fa-calendar-check me-2"></i>Book Now
-</button>
-</div>
-</div>
-</form>
-</div>
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-<div class="container">
-<div class="row g-4">
-<div class="col-lg-4">
-<h3 class="fw-bold mb-3" style="color: var(--coral-orange);">
-Jochebed's Touch
-</h3>
-<p class="text-white-50 mb-4">Inspiring greatness through authentic Nigerian cuisine. Located at Ojodu Berger, Lagos, we serve our community with care, innovation, and culinary excellence.</p>
-</div>
-<div class="col-lg-2 col-md-4">
-<h5 class="fw-bold mb-3">Quick Links</h5>
-<a href="#home" class="footer-link">Home</a>
-<a href="#about" class="footer-link">About Us</a>
-<a href="menu.html" class="footer-link">Our Menu</a>
-<a href="#location" class="footer-link">Location</a>
-</div>
-<div class="col-lg-2 col-md-4">
-<h5 class="fw-bold mb-3">Services</h5>
-<a href="#" class="footer-link">Dine-in</a>
-<a href="#" class="footer-link">Takeaway</a>
-<a href="#" class="footer-link">Catering</a>
-<a href="#" class="footer-link">Events</a>
-</div>
-<div class="col-lg-4 col-md-4">
-<h5 class="fw-bold mb-3">Newsletter</h5>
-<p class="text-white-50 mb-3">Subscribe for special offers and updates</p>
-<form id="newsletterForm" class="d-flex gap-2">
-<input type="email" class="form-control form-control-custom" placeholder="Your email" required>
-<button type="submit" class="btn btn-custom">
-<i class="fas fa-paper-plane"></i>
-</button>
-</form>
-</div>
-</div>
-<hr class="my-4 border-white border-opacity-25">
-<div class="row align-items-center">
-<div class="col-md-6 text-center text-md-start">
-<p class="mb-0 text-white-50">&copy; 2024 Jochebed's Touch Ltd. All rights reserved.</p>
-</div>
-<div class="col-md-6 text-center text-md-end">
-<p class="mb-0 text-white-50">Made with <i class="fas fa-heart text-danger"></i> in Ojodu Berger, Lagos</p>
-</div>
-</div>
-</div>
+</main>
+<footer class="foot">
+  <div class="foot__grid">
+    <div><a class="brand" href="index.html"><span class="leaf-glyph"></span>Jochebed's Touch</a>
+      <p style="margin-top:1rem;max-width:30ch">Inspiring greatness through authentic Nigerian cuisine. Located at Ojodu Berger, Lagos, we serve our community with care, innovation, and culinary excellence.</p></div>
+    <div><h5>Explore</h5><ul><li><a href="index.html">Our Story</a></li><li><a href="kitchen.html">Kitchen &amp; Space</a></li><li><a href="index.html#find">Find Us</a></li></ul></div>
+    <div><h5>Services</h5><ul><li>Dine-in</li><li>Takeaway</li><li>Catering</li><li>Events</li></ul></div>
+    <div><h5>Visit</h5><ul><li>43 Obafalabi Street, Beside Anuoluwa Plaza, Ojodu Berger, Lagos</li><li>Mon&ndash;Sat 7:00 AM &ndash; 10:00 PM</li><li>Sun 12:00 PM &ndash; 8:00 PM</li><li><a href="tel:+2347077310948">+234 707 731 0948</a></li></ul></div>
+  </div>
+  <div class="foot__base"><span>&copy; 2026 Jochebed's Touch Ltd. All rights reserved.</span><span>Made with &hearts; in Ojodu Berger, Lagos</span></div>
 </footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JavaScript -->
-<script src="script.js"></script>
+<a class="fab" target="_blank" rel="noopener" href="https://wa.me/2347077310948?text=Hi%20Jochebed%27s%20Touch%2C%20I%27d%20like%20to%20place%20an%20order" aria-label="Order on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9.5L4 22v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 6v2h8V9H8zm0 4v2h5v-2H8z"/></svg><span>Order on WhatsApp</span></a>
+<script src="js/gl.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
