@@ -47,8 +47,9 @@
   /* ---------- curtain, page transitions, links ---------- */
   var t0 = performance.now(), started = false, lastNow = t0;
   function ready() { if (doc.classList.contains('ready')) return; doc.classList.add('ready'); setTimeout(startReveals, 450); if (location.hash) setTimeout(function () { var el = document.getElementById(location.hash.slice(1)); if (el) goTo(el); }, 900); }
-  addEventListener('load', function () { setTimeout(ready, Math.max(0, 1100 - (performance.now() - t0))); });
-  setTimeout(ready, 4500);
+  var intro = doc.classList.contains('intro');
+  if (intro) { addEventListener('jt:intro-done', ready); if (window.__introDone) ready(); setTimeout(ready, 11000); }
+  else { addEventListener('load', function () { setTimeout(ready, Math.max(0, 1100 - (performance.now() - t0))); }); setTimeout(ready, 4500); }
   addEventListener('pageshow', function (e) { if (e.persisted) { doc.classList.remove('leaving'); doc.classList.add('ready'); } });
   var norm = function (p) { return p.replace(/index\.html$/, ''); };
   function closeMenu() { doc.classList.remove('menu-open'); var b = $('.burger'); if (b) b.setAttribute('aria-expanded', 'false'); }
@@ -88,7 +89,7 @@
   $$('[data-split]').forEach(function (el) { el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim()); splitNode(el, { n: 0 }); });
   function startReveals() {
     if (started) return; started = true;
-    var all = $$('[data-split],[data-reveal]');
+    var all = $$('[data-split],[data-reveal],.photo-word');
     if (RM || !('IntersectionObserver' in window)) { all.forEach(function (el) { el.classList.add('in'); }); return; }
     var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } }); }, { threshold: .15, rootMargin: '0px 0px -6% 0px' });
     all.forEach(function (el) { io.observe(el); });
@@ -162,9 +163,11 @@
   (function () {
     var sec = $('[data-pin="hscroll"]'); if (!sec || RM) return;
     var track = $('.hs__track', sec), dist = 0;
-    function size() { dist = Math.max(0, track.scrollWidth - innerWidth); sec.style.height = (dist + innerHeight * 1.1) + 'px'; }
+    var mob = matchMedia('(max-width:900px)');
+    function size() { if (mob.matches) { sec.style.height = ''; dist = 0; track.style.transform = ''; return; } dist = Math.max(0, track.scrollWidth - innerWidth); sec.style.height = (dist + innerHeight * 1.1) + 'px'; }
     size(); addEventListener('resize', size); addEventListener('load', size);
     updaters.push(function () {
+      if (mob.matches) return;
       var r = sec.getBoundingClientRect(); if (r.top > innerHeight * 1.2 || r.bottom < -innerHeight * .2) return;
       var tot = r.height - innerHeight, p = tot > 0 ? clamp(-r.top / tot, 0, 1) : 0;
       track.style.transform = 'translate3d(' + (-p * dist).toFixed(1) + 'px,0,0)';
@@ -215,6 +218,44 @@
       $$('figure', host).forEach(function (f) { io.observe(f); });
     }
   })();
+
+
+  /* ---------- hero letters: fill with whichever client photos exist ---------- */
+  (function () {
+    var words = $$('.photo-word'); if (!words.length) return;
+    var pool = doc.querySelector('[data-page="story"]') ?
+      ['dish-jollof-chicken', 'space-lounge', 'dish-eba-ogbono', 'dish-nkwobi', 'dish-noodles-egg', 'space-matchnight', 'dish-suya', 'dish-egusi', 'dish-moi-moi'] :
+      ['dish-nkwobi', 'dish-jollof-chicken', 'dish-egusi', 'dish-eba-ogbono', 'dish-suya', 'dish-noodles-egg', 'dish-moi-moi'];
+    var ok = [], left = pool.length;
+    pool.forEach(function (n) { var im = new Image(); im.onload = function () { ok.push(n); fin(); }; im.onerror = fin; im.src = 'images/' + n + '.jpg'; });
+    function fin() {
+      if (--left) return; if (!ok.length) return;
+      var order = pool.filter(function (n) { return ok.indexOf(n) > -1; });
+      words.forEach(function (w) { $$('.ltr', w).forEach(function (l, i) { l.style.setProperty('--img', 'url("images/' + order[(i * 2 + (i > 4 ? 1 : 0)) % order.length] + '.jpg")'); }); });
+    }
+  })();
+
+  /* ---------- live "open now" status from the real hours ---------- */
+  (function () {
+    var els = $$('.js-status'); if (!els.length) return;
+    function lagos() { var p = new Intl.DateTimeFormat('en-GB', { timeZone: 'Africa/Lagos', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date()), o = {}; p.forEach(function (x) { o[x.type] = x.value; }); return { d: o.weekday, m: (+o.hour % 24) * 60 + (+o.minute) }; }
+    function fmt(m) { var h = Math.floor(m / 60), ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + ' ' + ap; }
+    function run() {
+      var t; try { t = lagos(); } catch (e) { return; }
+      var sun = t.d === 'Sun', open = sun ? 12 * 60 : 7 * 60, close = sun ? 20 * 60 : 22 * 60, isOpen = t.m >= open && t.m < close, txt;
+      if (isOpen) txt = 'Open now · closes ' + fmt(close);
+      else if (t.m < open) txt = 'Closed · opens today at ' + fmt(open);
+      else { var nSun = t.d === 'Sat'; txt = 'Closed · opens ' + (nSun ? 'tomorrow' : 'tomorrow') + ' at ' + fmt(nSun ? 12 * 60 : 7 * 60); }
+      els.forEach(function (e) { e.classList.toggle('open', isOpen); e.classList.toggle('closed', !isOpen); e.lastElementChild.textContent = txt; });
+    }
+    run(); setInterval(run, 60000);
+  })();
+
+  /* ---------- doodles drift gently as you scroll ---------- */
+  var drift = RM ? [] : $$('.hero,.page-hero,.visit,.order');
+  updaters.push(function () {
+    for (var i = 0; i < drift.length; i++) { var r = drift[i].getBoundingClientRect(); if (r.bottom < -100 || r.top > innerHeight + 100) continue; drift[i].style.setProperty('--py', (-r.top).toFixed(0) + 'px'); }
+  });
 
   /* ---------- main loop ---------- */
   var lastY = scrollY, dirty = true, lastDir = 0, acc = 0;
