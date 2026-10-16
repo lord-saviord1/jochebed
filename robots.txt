@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jochebedstouch.cipherpr.live/sitemap.xml
