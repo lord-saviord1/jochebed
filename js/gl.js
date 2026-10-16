@@ -7,11 +7,11 @@
 
   // ---- brand palettes: [base, a, b, c] per chapter ----
   var PAL = [
-    ['#2a0623', '#600E4E', '#E37F65', '#F9E453'], // 0 hero: sunset
-    ['#220a1e', '#588B22', '#600E4E', '#44ABEA'], // 1 story: garden
-    ['#2a0623', '#E37F65', '#F9E453', '#600E4E'], // 2 kitchen: warm
-    ['#160a2a', '#44ABEA', '#600E4E', '#588B22'], // 3 map: evening sky
-    ['#2a0623', '#600E4E', '#44ABEA', '#E37F65']  // 4 space
+    ['#FBF7EF', '#E4F0D0', '#F1E1EC', '#FFE8C8'], // 0 hero: warm white, herb green, lilac, peach
+    ['#F7F6EC', '#D3E8B8', '#E8D5E6', '#DCEEF8'], // 1 story: garden
+    ['#FBF3E8', '#FFDCCB', '#FFF1B8', '#E7D9EA'], // 2 kitchen: warm
+    ['#F1F6F0', '#C9E4F5', '#E7D9EA', '#D3E8B8'], // 3 map: soft sky
+    ['#FBF7EF', '#E7D9EA', '#D3E8B8', '#FFE3D3']  // 4 space
   ];
   function hex(h) { var n = parseInt(h.slice(1), 16); return [(n >> 16 & 255) / 255, (n >> 8 & 255) / 255, (n & 255) / 255]; }
   var PALRGB = PAL.map(function (p) { return p.map(hex); });
@@ -46,10 +46,10 @@
     'void main(){vec2 uv=vUv;float asp=uRes.x/uRes.y;vec2 p=(uv-.5)*vec2(asp,1.);float t=uTime*.055;',
     'vec2 m=(uMouse-.5)*.25;vec2 q=p*1.15+vec2(0.,uScroll*.9);',
     'float n1=snoise(q+vec2(t,-t*.8)+m);float n2=snoise(q*1.7-vec2(t*1.2,t)+n1*.6);float n3=snoise(q*.8+vec2(n2,n1)*.9+t);',
-    'vec3 col=uBase;col=mix(col,uA,smoothstep(-.3,.8,n1)*.85);col=mix(col,uB,smoothstep(-.1,.9,n2)*.55);col=mix(col,uC,smoothstep(.4,1.0,n3)*.4);',
-    'float d=length(p-(uMouse-.5)*vec2(asp,1.));col+=uB*.14*exp(-d*3.2);',
-    'col*=1.0-.5*smoothstep(.3,1.15,length(uv-.5)*1.2);',
-    'float g=fract(sin(dot(uv*uRes+uTime,vec2(12.9898,78.233)))*43758.5453);col+=(g-.5)*.03;',
+    'vec3 col=uBase;col=mix(col,uA,smoothstep(-.4,.9,n1)*.9);col=mix(col,uB,smoothstep(-.2,.9,n2)*.6);col=mix(col,uC,smoothstep(.2,1.0,n3)*.5);',
+    'float d=length(p-(uMouse-.5)*vec2(asp,1.));col=mix(col,uB,.28*exp(-d*3.2));',
+    'col=mix(col,uBase,.35*smoothstep(.35,1.1,length(uv-.5)*1.2));',
+    'float g=fract(sin(dot(uv*uRes+uTime,vec2(12.9898,78.233)))*43758.5453);col+=(g-.5)*.022;',
     'gl_FragColor=vec4(col,1.);}'
   ].join('\n');
 
@@ -137,22 +137,27 @@
 
     // ---- scene ----
     var CAMZ = 12, FOV = 40 * Math.PI / 180, RANGE = opts.range || 34;
-    var COLS = { green: [.35,.6,.13], greenL: [.5,.72,.24], coral: [.89,.5,.4], sun: [.98,.89,.33], sky: [.27,.67,.92], plum: [.62,.2,.5] };
-    var leafPool = ['green','green','greenL','greenL','coral','sun','sky','plum','greenL'];
+    var COLS = { green: [.35,.6,.13], greenL: [.5,.72,.24], pine: [.2,.44,.14], coral: [.89,.5,.4], sun: [.98,.89,.33], sky: [.27,.67,.92], plum: [.62,.2,.5] };
+    var leafPool = ['green','green','green','greenL','greenL','greenL','pine','pine','greenL','green','coral','sun','plum'];
     var leaves = [], blooms = [], W = 1, H = 1, asp = 1, proj;
     var palIdx = opts.palette || 0;
     var cur = PALRGB[palIdx].map(function (c) { return c.slice(); });
     var dpr = Math.min(window.devicePixelRatio || 1, small ? 1.5 : 1.75);
 
-    var count = small ? 16 : 32;
+    var count = small ? 24 : 48;
     for (var n = 0; n < count; n++) leaves.push({
       t: n / count, jy: rnd(-1, 1), z: rnd(-9, 3.2), side: Math.random() < .5 ? -1 : 1, edge: rnd(.5, 1.05),
-      s: rnd(.4, .95), rx: rnd(0, 6.28), ry: rnd(0, 6.28), rz: rnd(0, 6.28),
+      s: rnd(.4, 1.05), rx: rnd(0, 6.28), ry: rnd(0, 6.28), rz: rnd(0, 6.28),
       vx: rnd(-.25, .25), vy: rnd(-.25, .25), vz: rnd(-.2, .2), ph: rnd(0, 6.28),
       col: COLS[leafPool[(Math.random() * leafPool.length) | 0]], x: 0, y: 0
     });
-    var bloomDefs = opts.blooms || [ { t: 0.0, side: 1, z: 1.2 }, { t: .30, side: 1, z: -3 }, { t: .58, side: 1, z: -2.5 }, { t: .86, side: -1, z: -3.5 } ];
-    bloomDefs.forEach(function (b, i) { blooms.push({ t: b.t, side: b.side, z: b.z, s: i === 0 ? 1.15 : .7, rot: rnd(0, 6), x: 0, y: 0, ph: i * 1.7, hero: i === 0 }); });
+    for (var q = 0; q < (small ? 3 : 6); q++) leaves.push({
+      t: (q + .5) / (small ? 3 : 6), jy: rnd(-1, 1), z: rnd(3.4, 5), side: q % 2 ? -1 : 1, edge: rnd(.9, 1.12),
+      s: rnd(1.2, 1.7), rx: rnd(0, 6.28), ry: rnd(0, 6.28), rz: rnd(0, 6.28),
+      vx: rnd(-.12, .12), vy: rnd(-.12, .12), vz: rnd(-.1, .1), ph: rnd(0, 6.28),
+      col: COLS[q % 2 ? 'pine' : 'green'], x: 0, y: 0 });
+    var bloomDefs = opts.blooms || [ { t: 0.0, side: 1, z: 1.2 }, { t: .20, side: 1, z: -3, kind: 1 }, { t: .40, side: -1, z: -2.5, kind: 2 }, { t: .60, side: 1, z: -3, kind: 0 }, { t: .80, side: -1, z: -3.5, kind: 1 }, { t: .95, side: 1, z: -2, kind: 2 } ];
+    bloomDefs.forEach(function (b, i) { blooms.push({ kind: b.kind || 0, t: b.t, side: b.side, z: b.z, s: i === 0 ? 1.15 : .75, rot: rnd(0, 6), x: 0, y: 0, ph: i * 1.7, hero: i === 0 }); });
 
     function halfW(z) { return Math.tan(FOV / 2) * (CAMZ - z) * asp; }
     function layout() {
@@ -228,11 +233,16 @@
           M.T(b.x + (mx - .5) * .8, b.y + Math.sin(time * .4 + b.ph) * .2, b.z),
           M.Rz(b.rot + time * .07), M.Rx(.55 + (my - .5) * -.35 + sway), M.Ry((mx - .5) * .35),
           M.S(b.s, b.s, b.s));
+        var SETS = [
+          [COLS.coral, [.97,.68,.55], COLS.sun, [.99,.93,.55]],
+          [COLS.plum, [.78,.45,.68], COLS.sun, [.99,.93,.55]],
+          [COLS.sun, [.99,.95,.6], [1,.7,.4], [1,.97,.8]]
+        ][b.kind || 0];
         var rings = [
-          { n: 9, col: COLS.coral, sx: .5, sy: .95, tilt: -.55, off: 0, rim: 1 },
-          { n: 7, col: [.97,.68,.55], sx: .42, sy: .78, tilt: -.95, off: .3, rim: 1 },
-          { n: 6, col: COLS.sun, sx: .34, sy: .55, tilt: -1.3, off: .1, rim: 1.4 },
-          { n: 5, col: [.99,.93,.55], sx: .22, sy: .28, tilt: -1.6, off: .5, rim: 1.4 }
+          { n: 9, col: SETS[0], sx: .5, sy: .95, tilt: -.55, off: 0, rim: 1 },
+          { n: 7, col: SETS[1], sx: .42, sy: .78, tilt: -.95, off: .3, rim: 1 },
+          { n: 6, col: SETS[2], sx: .34, sy: .55, tilt: -1.3, off: .1, rim: 1.4 },
+          { n: 5, col: SETS[3], sx: .22, sy: .28, tilt: -1.6, off: .5, rim: 1.4 }
         ];
         rings.forEach(function (r) {
           for (var i = 0; i < r.n; i++) {

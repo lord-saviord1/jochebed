@@ -1,19 +1,18 @@
-# Jochebed's Touch — showcase site (2 pages)
+# Jochebed's Touch — 2-page showcase site
 
-Pages: `index.html` (story, ends on the map) and `kitchen.html` (dishes, space, gallery, order).
-No build step, no libraries, no CDN. Upload the whole folder to GitHub Pages as-is.
+Pages: `index.html` (Our Story / Find Us) and `kitchen.html` (Kitchen & Space). No build step, no dependencies. Upload the folder as-is (GitHub Pages works).
 
-## Replace the old files
-Delete from the repo: `menu.html`, `menu.css`, `script.js`, `styles.css` (the menu, cart and forms are gone).
+## Photos — drop into `images/` (exact names, .jpg)
+Hero letters + dish cards + photo bands use these, and appear automatically when present (gradients show until then):
+- `dish-jollof-chicken.jpg`, `dish-noodles-egg.jpg`, `dish-eba-ogbono.jpg`, `dish-nkwobi.jpg`
+- `dish-egusi.jpg`, `dish-suya.jpg`, `dish-moi-moi.jpg` (stock photos load until you add real ones)
+- `space-lounge.jpg`, `space-matchnight.jpg`
+- `gallery-1.jpg` … `gallery-12.jpg` — optional; the gallery section appears only if at least one exists.
+Landscape/portrait both fine; ~1200px wide, under 300 KB each.
 
-## Photos (put them in `images/`, same names, .jpg)
-- Dishes: `dish-jollof-chicken.jpg`, `dish-noodles-egg.jpg`, `dish-eba-ogbono.jpg`, `dish-nkwobi.jpg`
-  (Egusi, Suya and Moi Moi use the Unsplash links from the old site; swap the `src` in kitchen.html when you have your own.)
-- Space: `space-lounge.jpg`, `space-matchnight.jpg`
-- Client photos: `gallery-1.jpg` ... `gallery-12.jpg`. Drop them in and a "Come as you are" gallery appears by itself. No code changes. With none present, the section stays hidden.
-Missing photos show a branded leaf-gradient placeholder instead of a broken image.
-
-## Things to edit
-- WhatsApp number: search `2347077310948` in index.html and kitchen.html.
-- Text: plain HTML, edit directly. Testimonials are the old site's; confirm they are real before launch.
-- Colors: top of `css/style.css` (`:root`). Scene palettes: top of `js/gl.js`.
+## Behaviour notes
+- ASCII intro plays on the first visit of each browsing session (new tab/visit), can be skipped (button, Enter, Esc, click). Skipped for reduced-motion users and `#links`.
+- "Open now" status uses real hours in Africa/Lagos time.
+- Mobile: horizontal dish strip is a normal swipe; pinned sections are shorter.
+- WhatsApp: +234 707 731 0948 (edit the `wa.me` links to change).
+- Testimonials are carried over from the original site; confirm with the client.
