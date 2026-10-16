@@ -236,9 +236,10 @@ html.menu-open .menu{clip-path:circle(150% at calc(100% - 46px) 46px);visibility
 /* photo bands: two rows drifting in opposite directions */
 .bands{padding:2vh 0 8vh;overflow:hidden;display:grid;gap:1.2rem}
 .band{overflow:hidden}
-.band__in{display:flex;align-items:center;gap:1.2rem;width:max-content;animation:band 60s linear infinite}
+.band__in{display:flex;align-items:center;gap:1.2rem;width:max-content;animation:band 60s linear infinite;will-change:transform}
 .band--rev .band__in{animation-direction:reverse;animation-duration:70s}
 .band:hover .band__in{animation-play-state:paused}
+.bands-js .band__in{animation:none}
 @keyframes band{to{transform:translateX(-50%)}}
 .pcard{position:relative;flex:none;margin:0;height:clamp(170px,26vh,250px);aspect-ratio:4/3;--lr:22%}
 .pcard figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1rem .7rem;color:#fff;font:800 1.05rem var(--head);background:linear-gradient(transparent,rgba(42,6,35,.65));z-index:1}
@@ -345,3 +346,29 @@ html.menu-open .menu{clip-path:circle(150% at calc(100% - 46px) 46px);visibility
 .rm .dish,.no-js .dish{position:relative;top:auto}
 .rm .band,.no-js .band{overflow-x:auto}
 .no-js .photo-word .ltr{transform:none}
+
+/* ---------- chapter pill (phones): always shows which section you are in ---------- */
+.chapter{display:none}
+@media (max-width:900px){
+  .chapter{display:flex;align-items:center;gap:.55rem;position:fixed;left:14px;bottom:max(16px,2vw);z-index:39;padding:.5rem .95rem .5rem .6rem;border-radius:999px;background:rgba(255,255,255,.92);box-shadow:0 8px 24px rgba(96,14,78,.18);font:700 .78rem var(--body);color:var(--amethyst);opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease);pointer-events:none;overflow:hidden;max-width:calc(100vw - 96px)}
+  html.ready .chapter{opacity:1;transform:none}
+  html.menu-open .chapter,html.intro .chapter{opacity:0}
+  .chapter b{display:grid;place-items:center;min-width:1.7rem;height:1.7rem;border-radius:50%;background:var(--pear-d);color:#fff;font-size:.72rem}
+  .chapter span{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;transition:opacity .25s}
+  .chapter.swap span{opacity:0}
+  .chapter i{position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--pear-l);transform-origin:left;transform:scaleX(var(--cp,0))}
+  /* each chapter becomes its own tinted leaf-shaped panel so sections are easy to tell apart */
+  .steps,.story,.hs,.find,.visit,.stack,.bands,.space,.voices{margin:14px 3vw;border-radius:0 48px 0 48px}
+  .steps{background:rgba(255,255,255,.55)}
+  .story{background:linear-gradient(180deg,rgba(211,232,184,.62),rgba(228,240,208,.38))}
+  .hs{background:linear-gradient(180deg,rgba(255,220,203,.6),rgba(255,241,184,.4))}
+  .find{background:linear-gradient(180deg,rgba(201,228,245,.62),rgba(231,217,234,.4))}
+  .visit{background:rgba(231,217,234,.5)}
+  .stack{background:rgba(255,220,203,.45);padding-inline:4vw}
+  .bands{background:rgba(255,241,184,.5);padding-block:3vh}
+  .space{background:rgba(211,232,184,.5);max-width:none;padding:8vh 6vw 6vh}
+  .voices{background:rgba(231,217,234,.5);max-width:none;padding:8vh 6vw 6vh}
+  .steps{padding:5vh 6vw 6vh}
+  .story__grid{padding-inline:7vw}
+  .page-hero,.hero{margin-bottom:0}
+}

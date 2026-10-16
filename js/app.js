@@ -120,7 +120,7 @@
 
   /* ---------- pinned progress helper ---------- */
   function pinP(sec) { var r = sec.getBoundingClientRect(), tot = r.height - VH(); return { p: tot > 0 ? clamp(-r.top / tot, 0, 1) : 1, top: r.top, h: r.height }; }
-  var updaters = [];
+  var updaters = [], frameDy = 0, frameDt = .016;
 
   /* ---------- the plant: hands nurture a sprout into a bloom ---------- */
   (function () {
@@ -228,6 +228,50 @@
   })();
 
 
+
+  /* ---------- photo bands: your scroll speeds them up, then they ease back down (~2s) ---------- */
+  (function () {
+    var bands = $$('.band'); if (!bands.length || RM) return;
+    doc.classList.add('bands-js');
+    var st = bands.map(function (b, i) { var inn = $('.band__in', b); return { b: b, inn: inn, x: 0, dir: b.classList.contains('band--rev') ? 1 : -1, base: i ? 34 : 42, hover: false }; });
+    st.forEach(function (o) { o.b.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') o.hover = true; }); o.b.addEventListener('pointerleave', function () { o.hover = false; }); });
+    var boost = 0, half = [];
+    function measure() { half = st.map(function (o) { return o.inn.scrollWidth / 2; }); }
+    measure(); addEventListener('resize', measure); addEventListener('load', measure);
+    var lastT = 0;
+    updaters.push(function (nowMs) {
+      var rdt = lastT ? Math.min(.25, (nowMs - lastT) / 1000) : .016; lastT = nowMs;
+      var r = bands[0].parentNode.getBoundingClientRect(); var vis = r.bottom > -100 && r.top < innerHeight + 100;
+      boost += Math.min(Math.abs(frameDy), 90) * (coarse ? 2.4 : 3.2) * (vis ? 1 : .2);
+      boost = Math.min(boost, 1200);
+      boost *= Math.exp(-rdt / .7); if (boost < .5) boost = 0;   // ~2 s to settle
+      if (!vis) return;
+      for (var i = 0; i < st.length; i++) {
+        var o = st[i], w = half[i] || 1, sp = (o.hover ? 0 : o.base) + boost;
+        o.x += o.dir * sp * rdt; o.x = ((o.x % w) - w) % w;      // wrap into (-w, 0]
+        o.inn.style.transform = 'translate3d(' + o.x.toFixed(1) + 'px,0,0)';
+      }
+    });
+  })();
+
+  /* ---------- chapter pill (phones) ---------- */
+  (function () {
+    var chs = $$('[data-chapter]'); if (chs.length < 2) return;
+    var pill = document.createElement('div'); pill.className = 'chapter'; pill.setAttribute('aria-hidden', 'true');
+    pill.innerHTML = '<b></b><span></span><i></i>'; document.body.appendChild(pill);
+    var nEl = $('b', pill), tEl = $('span', pill), now = -1, tm;
+    updaters.push(function () {
+      if (!matchMedia('(max-width:900px)').matches) return;
+      var mid = innerHeight * .5, cur = 0, prog = 0;
+      for (var i = 0; i < chs.length; i++) { var r = chs[i].getBoundingClientRect(); if (r.top <= mid) { cur = i; prog = clamp((mid - r.top) / Math.max(1, r.height), 0, 1); } }
+      pill.style.setProperty('--cp', prog.toFixed(3));
+      if (cur !== now) {
+        now = cur; pill.classList.add('swap'); clearTimeout(tm);
+        tm = setTimeout(function () { nEl.textContent = (cur + 1 < 10 ? '0' : '') + (cur + 1); tEl.textContent = chs[cur].getAttribute('data-chapter'); pill.classList.remove('swap'); }, 160);
+      }
+    });
+  })();
+
   /* ---------- hero letters: fill with whichever client photos exist ---------- */
   (function () {
     var words = $$('.photo-word'); if (!words.length) return;
@@ -283,6 +327,7 @@
       doc.classList.toggle('scrolled', y > 40);
       acc = (dy * dy < .01) ? acc : (Math.sign(dy) === Math.sign(acc) ? acc + dy : dy);
       if (!doc.classList.contains('menu-open')) { if (y > 240 && acc > 14) doc.classList.add('nav-hidden'); else if (acc < -10 || y < 120) doc.classList.remove('nav-hidden'); }
+      frameDy = dy; frameDt = dt;
       for (var i = 0; i < updaters.length; i++) updaters[i](now);
       if (glOK) JTGL.frame(now);
       dirty = false;
