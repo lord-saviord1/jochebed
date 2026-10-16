@@ -7,6 +7,9 @@
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
   var coarse = matchMedia('(hover: none)').matches;
+  var probe = document.createElement('div'); probe.setAttribute('aria-hidden', 'true'); probe.style.cssText = 'position:fixed;left:0;top:0;width:0;height:100svh;visibility:hidden;pointer-events:none';
+  document.body.appendChild(probe);
+  var VH = function () { return probe.offsetHeight || innerHeight; };
   var clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
   var seg = function (t, a, b) { return clamp((t - a) / (b - a), 0, 1); };
   var ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
@@ -19,12 +22,17 @@
   if (!glOK) { doc.classList.add('no-webgl'); if (canvas) canvas.remove(); }
   else JTGL.state.reduced = RM;
   addEventListener('pointermove', function (e) {
-    if (glOK) { JTGL.state.mx = e.clientX / innerWidth; JTGL.state.my = e.clientY / innerHeight; }
+    if (glOK && e.pointerType !== 'touch') { JTGL.state.mx = e.clientX / innerWidth; JTGL.state.my = e.clientY / innerHeight; }
   }, { passive: true });
+  // touch: Android cancels pointer events once a scroll starts, so follow the finger via touch events
+  var touchRest;
+  function touchAt(e) { if (!glOK || !e.touches[0]) return; clearTimeout(touchRest); JTGL.state.mx = e.touches[0].clientX / innerWidth; JTGL.state.my = e.touches[0].clientY / innerHeight; }
+  addEventListener('touchstart', touchAt, { passive: true }); addEventListener('touchmove', touchAt, { passive: true });
+  addEventListener('touchend', function () { clearTimeout(touchRest); touchRest = setTimeout(function () { if (glOK) { JTGL.state.mx = .5; JTGL.state.my = .5; } }, 900); }, { passive: true });
 
   /* ---------- smooth wheel scrolling (desktop) ---------- */
   var cur = scrollY, target = scrollY, wheeling = false, smooth = !RM && !coarse;
-  var maxScroll = function () { return Math.max(0, doc.scrollHeight - innerHeight); };
+  var maxScroll = function () { return Math.max(0, doc.scrollHeight - VH()); };
   if (smooth) {
     addEventListener('wheel', function (e) {
       if (e.ctrlKey || e.defaultPrevented || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
@@ -37,7 +45,7 @@
   }
   function goTo(el) {
     var y = el.getBoundingClientRect().top + scrollY;
-    if (el.dataset && el.dataset.pin === 'map') y += (el.offsetHeight - innerHeight) * .8; // land with the map open
+    if (el.dataset && el.dataset.pin === 'map') y += (el.offsetHeight - VH()) * .8; // land with the map open
     y = clamp(y, 0, maxScroll());
     if (smooth) { if (!wheeling) cur = scrollY; target = y; wheeling = true; }
     else scrollTo({ top: y, behavior: RM ? 'auto' : 'smooth' });
@@ -111,7 +119,7 @@
   }
 
   /* ---------- pinned progress helper ---------- */
-  function pinP(sec) { var r = sec.getBoundingClientRect(), tot = r.height - innerHeight; return { p: tot > 0 ? clamp(-r.top / tot, 0, 1) : 1, top: r.top, h: r.height }; }
+  function pinP(sec) { var r = sec.getBoundingClientRect(), tot = r.height - VH(); return { p: tot > 0 ? clamp(-r.top / tot, 0, 1) : 1, top: r.top, h: r.height }; }
   var updaters = [];
 
   /* ---------- the plant: hands nurture a sprout into a bloom ---------- */
@@ -169,7 +177,7 @@
     updaters.push(function () {
       if (mob.matches) return;
       var r = sec.getBoundingClientRect(); if (r.top > innerHeight * 1.2 || r.bottom < -innerHeight * .2) return;
-      var tot = r.height - innerHeight, p = tot > 0 ? clamp(-r.top / tot, 0, 1) : 0;
+      var tot = r.height - VH(), p = tot > 0 ? clamp(-r.top / tot, 0, 1) : 0;
       track.style.transform = 'translate3d(' + (-p * dist).toFixed(1) + 'px,0,0)';
     });
   })();
@@ -224,14 +232,14 @@
   (function () {
     var words = $$('.photo-word'); if (!words.length) return;
     var pool = doc.querySelector('[data-page="story"]') ?
-      ['dish-jollof-chicken', 'space-lounge', 'dish-eba-ogbono', 'dish-nkwobi', 'dish-noodles-egg', 'space-matchnight', 'dish-suya', 'dish-egusi', 'dish-moi-moi'] :
-      ['dish-nkwobi', 'dish-jollof-chicken', 'dish-egusi', 'dish-eba-ogbono', 'dish-suya', 'dish-noodles-egg', 'dish-moi-moi'];
+      ['dish-jollof-2', 'dish-suya-1', 'dish-moimoi-1', 'dish-nkwobi', 'dish-noodles-sausage', 'dish-eba-ogbono', 'dish-egusi-2', 'dish-jollof-1', 'dish-suya-2', 'dish-moimoi-2', 'dish-noodles-egg'] :
+      ['dish-nkwobi', 'dish-moimoi-1', 'dish-jollof-1', 'dish-suya-1', 'dish-eba-ogbono', 'dish-noodles-sausage', 'dish-egusi-2'];
     var ok = [], left = pool.length;
     pool.forEach(function (n) { var im = new Image(); im.onload = function () { ok.push(n); fin(); }; im.onerror = fin; im.src = 'images/' + n + '.jpg'; });
     function fin() {
       if (--left) return; if (!ok.length) return;
       var order = pool.filter(function (n) { return ok.indexOf(n) > -1; });
-      words.forEach(function (w) { $$('.ltr', w).forEach(function (l, i) { l.style.setProperty('--img', 'url("images/' + order[(i * 2 + (i > 4 ? 1 : 0)) % order.length] + '.jpg")'); }); });
+      words.forEach(function (w) { $$('.ltr', w).forEach(function (l, i) { l.style.setProperty('--img', 'url("' + new URL('images/' + order[(i * 2 + (i > 4 ? 1 : 0)) % order.length] + '.jpg', location.href).href + '")'); }); });
     }
   })();
 
@@ -270,7 +278,7 @@
     var y = scrollY, dy = y - lastY; lastY = y;
     if (!RM || dirty) {
       var mx = maxScroll();
-      if (glOK) { JTGL.state.progress = mx > 0 ? y / mx : 0; JTGL.state.vel = dy; }
+      if (glOK) { JTGL.state.progress = mx > 0 ? y / mx : 0; JTGL.state.vel = coarse ? clamp(dy * .2, -8, 8) : dy; }
       updatePalette();
       doc.classList.toggle('scrolled', y > 40);
       acc = (dy * dy < .01) ? acc : (Math.sign(dy) === Math.sign(acc) ? acc + dy : dy);
