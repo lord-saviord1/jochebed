@@ -175,7 +175,14 @@
       canvas.width = W; canvas.height = H; gl.viewport(0, 0, W, H);
       asp = W / H; proj = M.persp(FOV, asp, .1, 60); layout();
     }
-    resize(); window.addEventListener('resize', resize);
+    resize();
+    var touchy = window.matchMedia && matchMedia('(hover: none)').matches, lastCW = canvas.clientWidth, lastCH = canvas.clientHeight;
+    window.addEventListener('resize', function () {
+      // Android: the URL bar sliding in/out changes the height constantly. Don't rebuild the canvas for that.
+      var w = canvas.clientWidth, h = canvas.clientHeight;
+      if (touchy && Math.abs(w - lastCW) < 2 && Math.abs(h - lastCH) < lastCH * .3) return;
+      lastCW = w; lastCH = h; resize();
+    });
 
     var sp = 0, mx = .5, my = .5, vel = 0, t0 = performance.now(), frames = 0, acc = 0, last = t0, throttled = false;
 
@@ -194,7 +201,7 @@
       var time = red ? 3 : (now - t0) / 1000;
       sp += (S.progress - sp) * (red ? 1 : 1 - Math.exp(-dt * 6));
       var km = 1 - Math.exp(-dt * 3); mx += (S.mx - mx) * km; my += (S.my - my) * km;
-      vel += (Math.min(Math.abs(S.vel), 60) - vel) * (1 - Math.exp(-dt * 5));
+      vel += (Math.min(Math.abs(S.vel), 60) - vel) * (1 - Math.exp(-dt * (touchy ? 2.2 : 5)));
       var tgt = PALRGB[palIdx], k = red ? 1 : 1 - Math.exp(-dt * 2.2);
       for (var a = 0; a < 4; a++) for (var c = 0; c < 3; c++) cur[a][c] += (tgt[a][c] - cur[a][c]) * k;
 

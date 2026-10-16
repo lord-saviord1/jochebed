@@ -2,13 +2,27 @@
 
 Pages: `index.html` (Our Story / Find Us) and `kitchen.html` (Kitchen & Space). No build step, no dependencies. Upload the folder as-is (GitHub Pages works).
 
-## Photos — drop into `images/` (exact names, .jpg)
-Hero letters + dish cards + photo bands use these, and appear automatically when present (gradients show until then):
-- `dish-jollof-chicken.jpg`, `dish-noodles-egg.jpg`, `dish-eba-ogbono.jpg`, `dish-nkwobi.jpg`
-- `dish-egusi.jpg`, `dish-suya.jpg`, `dish-moi-moi.jpg` (stock photos load until you add real ones)
-- `space-lounge.jpg`, `space-matchnight.jpg`
-- `gallery-1.jpg` … `gallery-12.jpg` — optional; the gallery section appears only if at least one exists.
-Landscape/portrait both fine; ~1200px wide, under 300 KB each.
+## Photos
+
+Photos live in `images/` (`.jpg`) and are already wired in. A missing photo
+falls back to a branded gradient, and missing photo-band cards are skipped.
+
+| File | Dish |
+|---|---|
+| dish-jollof-1.jpg, dish-jollof-2.jpg | Jollof rice & chicken (two shots) |
+| dish-noodles-egg.jpg | Indomie & egg |
+| dish-noodles-sausage.jpg | Indomie & sausage |
+| dish-eba-ogbono.jpg | Eba & ogbono |
+| dish-nkwobi.jpg | Nkwobi |
+| dish-egusi-2.jpg | Egusi soup |
+| dish-suya-1.jpg, dish-suya-2.jpg | Suya (two shots) |
+| dish-moimoi-1.jpg, dish-moimoi-2.jpg | Moi moi (two shots) |
+
+Still to add (they appear automatically):
+- `space-lounge.jpg`, `space-matchnight.jpg`: Our Space section and photo bands
+- `gallery-1.jpg` to `gallery-12.jpg`: optional gallery, shown only if at least one exists
+
+Aim for about 1200px on the long side and under 300 KB each.
 
 ## Behaviour notes
 - ASCII intro plays on the first visit of each browsing session (new tab/visit), can be skipped (button, Enter, Esc, click). Skipped for reduced-motion users and `#links`.

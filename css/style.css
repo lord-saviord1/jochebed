@@ -23,7 +23,7 @@ h3{font-size:clamp(1.5rem,2.4vw,2rem);line-height:1.05}
 
 #scene{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;display:block}
 .no-webgl body{background:radial-gradient(1100px 800px at 85% 5%,#E4F0D0 0,transparent 60%),radial-gradient(900px 700px at 8% 95%,#F1E1EC 0,transparent 60%),var(--bg) fixed}
-main,footer,.nav{position:relative;z-index:1}
+main,footer{position:relative;z-index:1}
 
 .leaf-frame{border-radius:0 var(--lr,22%) 0 var(--lr,22%);overflow:hidden}
 .leaf-glyph{display:inline-block;width:.8em;height:.8em;background:var(--pear-l);border-radius:0 50% 0 50%;transform:rotate(-8deg);flex:none}
@@ -54,7 +54,7 @@ html.intro-out #intro{transform:translateY(-105%)}
 .intro__skip:hover{background:var(--amethyst);color:#fff}
 
 /* ---------- nav ---------- */
-.nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:16px 5vw;transition:transform .5s var(--ease),background .4s,box-shadow .4s}
+.nav{position:fixed;z-index:60;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:16px 5vw;transition:transform .5s var(--ease),background .4s,box-shadow .4s}
 html.scrolled .nav{background:rgba(251,247,239,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 html.nav-hidden .nav{transform:translateY(-110%)}
 .brand{display:flex;align-items:center;gap:.55rem;text-decoration:none;font:800 1.4rem var(--head);color:var(--amethyst)}
@@ -71,7 +71,6 @@ html.menu-open .burger span:nth-child(2){top:21px;transform:rotate(-45deg)}
 html.menu-open .burger{background:var(--cream)}
 .menu{position:fixed;inset:0;z-index:45;background:rgba(42,6,35,.97);color:var(--cream);display:flex;flex-direction:column;justify-content:center;gap:1.2rem;padding:0 8vw;clip-path:circle(0% at calc(100% - 46px) 46px);transition:clip-path .8s var(--ease);visibility:hidden}
 html.menu-open .menu{clip-path:circle(150% at calc(100% - 46px) 46px);visibility:visible}
-html.menu-open .nav{z-index:50}
 .menu a{font:800 clamp(2.4rem,11vw,4rem)/1 var(--head);text-decoration:none}
 .menu a.hl{color:var(--sun);font-size:1.5rem;margin-top:1rem}
 .menu a:hover{color:var(--sun)}
@@ -243,6 +242,7 @@ html.menu-open .nav{z-index:50}
 @keyframes band{to{transform:translateX(-50%)}}
 .pcard{position:relative;flex:none;margin:0;height:clamp(170px,26vh,250px);aspect-ratio:4/3;--lr:22%}
 .pcard figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.6rem 1rem .7rem;color:#fff;font:800 1.05rem var(--head);background:linear-gradient(transparent,rgba(42,6,35,.65));z-index:1}
+.pitem{display:flex;align-items:center;gap:1.2rem;flex:none}
 .pdd{flex:none;width:54px;color:var(--pear);opacity:.55}
 
 .space{padding:14vh 6vw 6vh;max-width:1380px;margin:0 auto}
