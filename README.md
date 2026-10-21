@@ -35,3 +35,6 @@ Aim for about 1200px on the long side and under 300 KB each.
 - Icons: `favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`, plus `site.webmanifest`.
 - `robots.txt` and `sitemap.xml` point at https://jochebedstouch.cipherpr.live/. Update them if the domain changes.
 - Platforms cache previews. After deploying, refresh WhatsApp's by sharing the link with `?v=2` on the end, and use Facebook's Sharing Debugger to re-scrape.
+
+## Fonts
+Brand type follows the client flyer. Baloo 2 is used for the hero word, headings, nav, buttons, labels and the orange italic "Jochebed's". Fredoka is used for the motto ("Every conversation, a connection.") and the tagline. Inter is body text only. All load from Google Fonts in each page's `<head>`.
