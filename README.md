@@ -19,7 +19,6 @@ falls back to a branded gradient, and missing photo-band cards are skipped.
 | dish-moimoi-1.jpg, dish-moimoi-2.jpg | Moi moi (two shots) |
 
 Still to add (they appear automatically):
-- `space-lounge.jpg`, `space-matchnight.jpg`: Our Space section and photo bands
 - `gallery-1.jpg` to `gallery-12.jpg`: optional gallery, shown only if at least one exists
 
 Aim for about 1200px on the long side and under 300 KB each.
@@ -28,7 +27,7 @@ Aim for about 1200px on the long side and under 300 KB each.
 - ASCII intro plays on the first visit of each browsing session (new tab/visit), can be skipped (button, Enter, Esc, click). Skipped for reduced-motion users and `#links`.
 - "Open now" status uses real hours in Africa/Lagos time.
 - Mobile: horizontal dish strip is a normal swipe; pinned sections are shorter.
-- WhatsApp: +234 707 731 0948 (edit the `wa.me` links to change).
+- WhatsApp: +234 707 310 9948 (edit the `wa.me` links to change).
 - Testimonials are carried over from the original site; confirm with the client.
 
 ## Link previews & icons

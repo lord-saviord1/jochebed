@@ -250,7 +250,8 @@ html.menu-open .menu{clip-path:circle(150% at calc(100% - 46px) 46px);visibility
 .space__head p{color:var(--muted);max-width:34rem;margin-top:1.2rem;font-size:1.1rem}
 .space__grid{display:grid;grid-template-columns:1.25fr 1fr;gap:2vw;margin-top:5vh;align-items:start}
 .shot{position:relative;margin:0}
-.shot .leaf-frame{--lr:20%;aspect-ratio:4/5;box-shadow:var(--shadow)}
+.shot .leaf-frame{--lr:20%;aspect-ratio:5/4;box-shadow:var(--shadow)}
+.shot:nth-child(2) img{object-position:62% 50%}
 .shot:nth-child(2){margin-top:12vh}
 .shot figcaption{margin-top:.8rem;font:800 1.2rem var(--head);color:var(--amethyst)}
 .gallery{padding:6vh 6vw 4vh;max-width:1380px;margin:0 auto}
