@@ -53,7 +53,7 @@
     if (idle) { px = W * (.5 + .46 * Math.sin(t * .9)); py = H * (.47 + .12 * Math.sin(t * 1.7)); }
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
     ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.font = '700 ' + (cell * 1.1) + 'px "Courier New",ui-monospace,monospace';
-    ctx.globalAlpha = .28; ctx.fillStyle = '#588B22';
+    ctx.globalAlpha = .28; ctx.fillStyle = '#A0B043';
     for (var i = 0; i < dust.length; i++) { var q = dust[i]; ctx.fillText(q.c, q.x, q.y + Math.sin(t + q.ph) * 2); }
     var R = idle ? 110 : 140, rdt = Math.min(.3, (now - (frame.prev || now)) / 1000); frame.prev = now;
     var steps = Math.max(1, Math.ceil(rdt / .02)), sdt = rdt / steps;

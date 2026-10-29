@@ -7,11 +7,11 @@
 
   // ---- brand palettes: [base, a, b, c] per chapter ----
   var PAL = [
-    ['#FBF7EF', '#E4F0D0', '#F1E1EC', '#FFE8C8'], // 0 hero: warm white, herb green, lilac, peach
-    ['#F7F6EC', '#D3E8B8', '#E8D5E6', '#DCEEF8'], // 1 story: garden
-    ['#FBF3E8', '#FFDCCB', '#FFF1B8', '#E7D9EA'], // 2 kitchen: warm
-    ['#F1F6F0', '#C9E4F5', '#E7D9EA', '#D3E8B8'], // 3 map: soft sky
-    ['#FBF7EF', '#E7D9EA', '#D3E8B8', '#FFE3D3']  // 4 space
+    ['#FBF7EF', '#ECEFD9', '#E8DCEE', '#FBE3D9'], // 0 hero: warm white, pear tint, amethyst tint, coral tint
+    ['#F7F6EC', '#DDE5B0', '#E4D8EA', '#D5EDF9'], // 1 story: garden
+    ['#FBF3E8', '#F9DDD4', '#FEF1B8', '#E4D8EA'], // 2 kitchen: warm
+    ['#F1F6F0', '#CCEAF8', '#E4D8EA', '#DDE5B0'], // 3 map: soft sky
+    ['#FBF7EF', '#E4D8EA', '#DDE5B0', '#FBE3D9']  // 4 space
   ];
   function hex(h) { var n = parseInt(h.slice(1), 16); return [(n >> 16 & 255) / 255, (n >> 8 & 255) / 255, (n & 255) / 255]; }
   var PALRGB = PAL.map(function (p) { return p.map(hex); });

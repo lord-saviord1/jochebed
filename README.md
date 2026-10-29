@@ -38,3 +38,11 @@ Aim for about 1200px on the long side and under 300 KB each.
 
 ## Fonts
 Brand type follows the client flyer. Baloo 2 is used for the hero word, headings, nav, buttons, labels and the orange italic "Jochebed's". Fredoka is used for the motto ("Every conversation, a connection.") and the tagline. Inter is body text only. All load from Google Fonts in each page's `<head>`.
+
+## v8 — brand guideline pass (Oct 2024 guide)
+- Palette: Amethyst #7B3C98, Pear #A0B043, Sky #0397DB, Sunshine #FDD835, Coral #E2552B (taken from the guide's swatches).
+- Type: guide specifies Museo Sans Rounded (headlines) + Aktiv Grotesk (body). Both are licensed, so Nunito + Inter are stand-ins. To switch: add the Adobe Fonts / licensed files and change `--head` / `--body` in css/style.css.
+- Logos extracted from the guide PDF as vector SVGs: images/logo-white(.svg|-mark.svg), logo-color(.svg|-mark.svg). Replace with the client's originals when available.
+- Ordering is two routes only: "Order Now" (opens WhatsApp) or "Call to order" (tel:+2347073109948). No payments. Dish cards say "Ask about this dish".
+- Showcase note: "Food photos are a showcase. For the full menu and prices, reach out to us."
+- Socials: Instagram @jochebedfood, Facebook, YouTube @Jochebed_food (footer + Visit section + JSON-LD sameAs).
