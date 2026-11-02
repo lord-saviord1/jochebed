@@ -294,7 +294,7 @@
     function fmt(m) { var h = Math.floor(m / 60), ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return h + ' ' + ap; }
     function run() {
       var t; try { t = lagos(); } catch (e) { return; }
-      var sun = t.d === 'Sun', open = sun ? 12 * 60 : 7 * 60, close = sun ? 20 * 60 : 22 * 60, isOpen = t.m >= open && t.m < close, txt;
+      var sun = t.d === 'Sun', open = sun ? 12 * 60 : 7 * 60, close = sun ? 21 * 60 : 23 * 60, isOpen = t.m >= open && t.m < close, txt;
       if (isOpen) txt = 'Open now · closes ' + fmt(close);
       else if (t.m < open) txt = 'Closed · opens today at ' + fmt(open);
       else { var nSun = t.d === 'Sat'; txt = 'Closed · opens ' + (nSun ? 'tomorrow' : 'tomorrow') + ' at ' + fmt(nSun ? 12 * 60 : 7 * 60); }
